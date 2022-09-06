@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+ 
+
+/* ------------------------------------Table------------------------------------*/
+
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+@media (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+   font-size: 13px;
+  }
+  .nav-list li{
+    margin-left: 16px;
+  }
+  .logo{
+    font-size: 18px;
+  }
+
+/* ------------------------------------Table------------------------------------*/
+
+  th,td{
+    padding: 5px 40px;
+  }
+
+}
+
+@media (max-width: 662px){
+  th,td{
+    padding: 5px 20px;
+  }
+}
