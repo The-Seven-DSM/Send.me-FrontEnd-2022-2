@@ -1,145 +1,116 @@
 import React from "react";
-import * as C from './styles';
+import { FaCheckCircle } from "react-icons/fa";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 function Table(){
+ 
     return(
-        // <main>
-        //     <div className="search">
-              
-        //     </div>
-        //     <div className="fixed">
-        //     <table>
-        //         <thead>
-        //             <tr>
-        //                 <th>Nome</th>
-        //                 <th>Email</th>
-        //                 <th>Pagina</th>
-        //                 <th>Status</th>
-        //             </tr>
-        //         </thead>
-        //         <tbody>
-        //         <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>Wallace da Silva</td>
-        //                 <td>wllcfelipe@gmail.com</td>
-        //                 <td>17</td>
-        //                 <td>.</td>
-        //             </tr>
-        //         </tbody>
-        //     </table>
-        //     </div>
-        // </main>
-
-        <C.Main>
-            <C.InputContent>
-                <C.Input placeholder="Nome"/>
-                <C.Input type="date"/>
-            </C.InputContent>
-            <C.Table>
-                <C.Thead>
-                    <C.Th>Nome</C.Th>
-                    <C.Th>Email</C.Th>
-                    <C.Th>Página</C.Th>
-                    <C.Th>Status</C.Th>
-                </C.Thead>
-                <C.Tbody>
-                    <C.Td>Wallace da Silva</C.Td>
-                    <C.Td>wllcfelipe@gmail.com</C.Td>
-                    <C.Td>17</C.Td>
-                    <C.Td>V</C.Td>
-                </C.Tbody>
-                <C.Tbody>
-                    <C.Td>Wallace da Silva</C.Td>
-                    <C.Td>wllcfelipe@gmail.com</C.Td>
-                    <C.Td>17</C.Td>
-                    <C.Td>V</C.Td>
-                </C.Tbody>
-                <C.Tbody>
-                    <C.Td>Wallace da Silva</C.Td>
-                    <C.Td>wllcfelipe@gmail.com</C.Td>
-                    <C.Td>17</C.Td>
-                    <C.Td>V</C.Td>
-                </C.Tbody>
-                <C.Tbody>
-                    <C.Td>Wallace da Silva</C.Td>
-                    <C.Td>wllcfelipe@gmail.com</C.Td>
-                    <C.Td>17</C.Td>
-                    <C.Td>V</C.Td>
-                </C.Tbody>
-                <C.Tbody>
-                    <C.Td>Wallace da Silva</C.Td>
-                    <C.Td>wllcfelipe@gmail.com</C.Td>
-                    <C.Td>17</C.Td>
-                    <C.Td>V</C.Td>
-                </C.Tbody>
-            </C.Table>
-        </C.Main>
-
+        <main>
+            <div className="search">
+              <input type="text" placeholder="Nome"/>
+              <select>
+                    <option value="0">Selecione</option>
+                    <option value="1">Teste1</option>
+                    <option value="2">Teste2</option>
+                </select>
+            </div>
+            <div className="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Pagina</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><button id="scr">Verificar</button></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaRegCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaRegCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaRegCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td><FaCheckCircle /></td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>17</td>
+                        <td>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div className="send">
+                <p>Disparar por:</p>
+                <select>
+                    <option value="0">Selecione</option>
+                    <option value="1">Teste1</option>
+                    <option value="2">Teste2</option>
+                </select>
+                <button>enviar emails</button>
+            </div>
+        </main>
     )
 }
 
