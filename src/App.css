@@ -18,7 +18,23 @@ a:hover {
 main{
   padding: 50px;
 }
-
+.editor{
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pdf{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  background: #ccc;
+  margin: 50px;
+}
 /* -------------------------------------------------- NAVBAR -------------------------------------------------- */
 
 .logo {
@@ -53,6 +69,9 @@ nav {
 .scr{
   background: red;
 }
+.scrV{
+  background: green;
+}
 table{
   padding: 0 60px;
 }
@@ -63,6 +82,7 @@ table{
   padding:20px;
   background: #fff;
 }
+
 input{
   width: 220px;
   padding: 10px 20px;
@@ -104,10 +124,11 @@ th,td{
   word-break: break-all;
   text-align: center;
 }
-/* tr:hover td{
+tr:hover td{
   background: #f6f6f6;
   color: #f39d1c;
-} */
+  cursor: pointer;
+}
 ::placeholder{
   color: #f39d1c;
 }
@@ -116,17 +137,37 @@ th,td{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px 120px 0 0;
+  margin: 20px;
+  padding: 20px 120px 20px 0;
 }
-button{
+#status{
+  border-radius: 50%;
+  background: #f82929;
+  padding: 10px;
+  cursor: pointer;
+  border: 0;
+}
+#statusV{
+  border-radius: 50%;
+  background: green;
+  padding: 10px;
+  cursor: pointer;
+  border: 0;
+}
+.push{
   padding: 10px 20px;
   background: #f82929;
   cursor: pointer;
   color: #fff;
   border: 0;
-
 }
-
+.empty{
+  padding: 10px 20px;
+  background: #ccc;
+  cursor: pointer;
+  color: #000;
+  border: 0;
+}
 @media(max-width:991px){
   .table-section{
     padding: 0 10px;
@@ -140,4 +181,5 @@ button{
   }
 }
 
-/* -------------------------------------------------- TABLE -------------------------------------------------- */
+/* -------------------------------------------------- PUSH BAR / TABLE -------------------------------------------------- */
+

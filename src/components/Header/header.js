@@ -6,7 +6,7 @@ function Header(){
       <nav>
         <a className="logo" href="/">Midall</a>
         <ul className="nav-list">
-          <li><a href="/">Usuários</a></li>
+          <li><a href="/editor">Editar Email</a></li>
         </ul>
       </nav>
       // <C.Nav>

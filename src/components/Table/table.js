@@ -1,10 +1,14 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
-import { FaRegCheckCircle } from "react-icons/fa";
+import Button from "./button";
+import Header from "../Header/header";
+// import { FaCheckCircle } from "react-icons/fa";
+// import { FaRegCheckCircle } from "react-icons/fa";
 
-function Table(){
- 
-    return(
+const Table = () => {
+
+    return (
+        <>
+        <Header />
         <main>
             <div className="search">
               <input type="text" placeholder="Nome"/>
@@ -29,74 +33,50 @@ function Table(){
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><button id="scr">Verificar</button></td>
+                        <td><Button /></td>
                         
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaRegCheckCircle /></td>
+                        <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaRegCheckCircle /></td>
+                        <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaRegCheckCircle /></td>
+                        <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaCheckCircle /></td>
+                        <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaCheckCircle /></td>
+                        <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaCheckCircle /></td>
+                        <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>17</td>
-                        <td><FaCheckCircle /></td>
-                    </tr>
-                    <tr>
-                        <td>Wallace da Silva</td>
-                        <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
-                        <td>.</td>
-                    </tr>
-                    <tr>
-                        <td>Wallace da Silva</td>
-                        <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
-                        <td>.</td>
-                    </tr>
-                    <tr>
-                        <td>Wallace da Silva</td>
-                        <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
-                        <td>.</td>
-                    </tr>
-                    <tr>
-                        <td>Wallace da Silva</td>
-                        <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
-                        <td>.</td>
+                        <td><Button /></td>
                     </tr>
                 </tbody>
             </table>
@@ -105,13 +85,14 @@ function Table(){
                 <p>Disparar por:</p>
                 <select>
                     <option value="0">Selecione</option>
-                    <option value="1">Teste1</option>
-                    <option value="2">Teste2</option>
+                    <option value="1">Verificados</option>
+                    <option value="2">Não Verificados</option>
                 </select>
-                <button>enviar emails</button>
+                <button className="push">enviar emails</button>
             </div>
         </main>
-    )
+        </>
+    );
 }
 
 export default Table;

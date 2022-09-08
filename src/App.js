@@ -1,17 +1,18 @@
 import React from 'react';
-import Header from './components/Header/header';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Table from './components/Table/table';
 import './App.css';
-import Editor from './Editor/editor';
+import Editor from './components/Editor/editor';
 
-function App() {
+const App = () => {
   return(
-    <>
-      <Header />
-      <Table />
-      <Editor />
-    </>
-    
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Table />} />
+        <Route path='/editor' element={<Editor />} />
+      </Routes>
+    </BrowserRouter>
   )
 
 };
