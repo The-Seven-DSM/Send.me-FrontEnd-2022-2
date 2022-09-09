@@ -1,7 +1,5 @@
-root{
-  --cor-laranja: #f39d1c;
-  --cor-rosa: #f31ca1;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:ital,wght@0,600;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +8,15 @@ a {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
+  font-family: 'Poppins', extra-bold;
 }
 a:hover {
   opacity: 0.7;
 }
-
+h3{
+  font-family: 'Inter';
+  color: rgb(44, 44, 44);
+}
 main{
   padding: 50px;
 }
@@ -47,7 +49,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: linear-gradient(to right, #ff5ac0 , #f39d1c );
+  background: linear-gradient(to right, #94215d , #f8994d, #ffc855 );
   height: 8vh;
   margin-bottom: 20px;
 }
@@ -95,6 +97,7 @@ select{
   margin: 0 10px;
   padding: 10px 20px;
   border: 1px solid #f39d1c;
+  border-radius: 5px;
   color: #f39d1c;
 }
 
@@ -115,14 +118,17 @@ thead th{
   position: sticky;
   top: 0;
   background: #fff;
-  color: #f31ca1;
+  color: #9f215d;
   font-size: 16px;
-  border-bottom: 1px solid #f31ca1;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid #9f215d;
 }
 th,td{
   padding: 10px 20px;
   word-break: break-all;
   text-align: center;
+  font-family: 'Inter';
+  letter-spacing: 1px;
 }
 tr:hover td{
   background: #f6f6f6;
@@ -137,7 +143,7 @@ tr:hover td{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 20px;
+  margin: 40px 20px;
   padding: 20px 120px 20px 0;
 }
 #status{
@@ -171,6 +177,7 @@ tr:hover td{
 @media(max-width:991px){
   .table-section{
     padding: 0 10px;
+    margin: 40px 0;
   }
   th,td{
     font-size: 13px;

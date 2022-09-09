@@ -17,7 +17,9 @@ const Editor = () => {
             <h3>Verificar Email / Editar Email</h3>
         </div>
         <div className="editor">
-            
+        <div className="pdf">
+                <h3>pdf</h3>
+            </div>
             <JoditEditor 
             	ref={editor}
                 value={content}
@@ -26,9 +28,7 @@ const Editor = () => {
                 onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
                 onChange={newContent => {}}
             />
-            <div className="pdf">
-                <h3>pdf</h3>
-            </div>
+           
         </div>
         <div className="send">
                 <button className="push">Validar Email</button>

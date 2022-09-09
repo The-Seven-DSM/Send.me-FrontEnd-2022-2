@@ -78,6 +78,7 @@ const Table = () => {
                         <td>17</td>
                         <td><Button /></td>
                     </tr>
+                    
                 </tbody>
             </table>
             </div>
