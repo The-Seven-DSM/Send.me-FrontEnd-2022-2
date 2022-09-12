@@ -20,7 +20,7 @@ const Editor = () => {
         <div className="pdf">
                 <h3>pdf</h3>
             </div>
-            <JoditEditor 
+            <JoditEditor
             	ref={editor}
                 value={content}
                 config={config}

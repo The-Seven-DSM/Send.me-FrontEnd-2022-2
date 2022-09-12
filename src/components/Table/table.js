@@ -24,7 +24,7 @@ const Table = () => {
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Pagina</th>
+                        <th>Caderno</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -32,50 +32,50 @@ const Table = () => {
                 <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Executivo I</td>
                         <td><Button /></td>
                         
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Executivo II</td>
                         <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Cidade</td>
                         <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Executivo I</td>
                         <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Executivo I</td>
                         <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Executivo II</td>
                         <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Caderno</td>
                         <td><Button /></td>
                     </tr>
                     <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
-                        <td>17</td>
+                        <td>Caderno</td>
                         <td><Button /></td>
                     </tr>
                     
