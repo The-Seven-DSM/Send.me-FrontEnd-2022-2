@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:ital,wght@0,600;1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
+
 a {
   color: #fff;
   text-decoration: none;
@@ -37,6 +39,7 @@ main{
   background: #ccc;
   margin: 50px;
 }
+
 /* -------------------------------------------------- NAVBAR -------------------------------------------------- */
 
 .logo {
@@ -47,6 +50,8 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  width: 100%;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: linear-gradient(to right, #94215d , #f8994d, #ffc855 );
   height: 8vh;
@@ -59,13 +64,15 @@ nav {
   letter-spacing: 3px;
   margin-left: 32px;
 }
+
 @media (max-width: 991px) {
-  body {
-    overflow-x: hidden;
+  .logo{
+    font-size: 20px;
+    letter-spacing: 1px;
   }
-}
-.nav-list li{
-  letter-spacing: 0;
+  .nav-list li{
+    letter-spacing: 0;
+  }
 }
 
 /* -------------------------------------------------- TABLE -------------------------------------------------- */
@@ -109,7 +116,7 @@ table{
 }
 
 .table-section{
-  height: 300px;
+  height: 330px;
   overflow-y: scroll;
   padding: 0 120px;
 }
@@ -156,14 +163,15 @@ tr:hover td{
 #status{
   border-radius: 50%;
   background: #f82929;
-  padding: 10px;
+  padding: 7px;
   cursor: pointer;
   border: 0;
+  margin-bottom: 10px;
 }
 #statusV{
   border-radius: 50%;
   background: green;
-  padding: 10px;
+  padding: 7px;
   cursor: pointer;
   border: 0;
 }
@@ -181,6 +189,7 @@ tr:hover td{
   color: #000;
   border: 0;
 }
+
 @media(max-width:991px){
   .table-section{
     padding: 0 10px;
@@ -200,12 +209,12 @@ tr:hover td{
 }
 
 /* -------------------------------------------------- CADASTRO DE USUARIOS -------------------------------------------------- */
+
 .fundinho{
   display: flex;
-  height: 100vh;
   justify-content: center;
-  padding: 10px;
   align-items: center;
+  height: 90vh;
 }
 .container{
   max-width: 700px;
@@ -223,29 +232,28 @@ tr:hover td{
 .container form .detail{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   margin: 20px 0 12px 0;
 }
 form .detail .input-box{
   margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
+  width: 100%;
 }
 .detail .input-box input{
   height: 35px;
   width: 100%;
   outline: none;
   border-radius: 5px;
-  padding-left: 15px;
   border: 1px solid #f39d1c;
   font-size: 14px;
   border-bottom-width: 2px;
 }
 .detail .input-box select{
   height: 35px;
-  width: 104%;
+  width: 100%;
   outline: none;
   border-radius: 5px;
-  padding-left: 15px;
   border: 1px solid #f39d1c;
   font-size: 14px;
 
@@ -268,7 +276,8 @@ form .botao input{
   color: #fff;
   cursor: pointer;
 }
-@media(max-width:991px){
+
+@media(max-width:768px){
 .container{
   max-width: 100%;
 }
@@ -276,4 +285,5 @@ form .detail .input-box{
   margin-bottom: 15px;
   width: 100%;
 }
+
 }
