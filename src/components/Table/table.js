@@ -29,7 +29,7 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
+                    <tr>
                         <td>Wallace da Silva</td>
                         <td>wllcfelipe@gmail.com</td>
                         <td>Executivo I</td>

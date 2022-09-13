@@ -50,7 +50,6 @@ nav {
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: linear-gradient(to right, #94215d , #f8994d, #ffc855 );
   height: 8vh;
-  margin-bottom: 20px;
 }
 .nav-list {
   list-style: none;
@@ -64,6 +63,9 @@ nav {
   body {
     overflow-x: hidden;
   }
+}
+.nav-list li{
+  letter-spacing: 0;
 }
 
 /* -------------------------------------------------- TABLE -------------------------------------------------- */
@@ -89,17 +91,18 @@ table{
   background: #fff;
 }
 
-input{
-  width: 220px;
+.search input{
+  width: 250px;
   padding: 10px 20px;
   margin: 0 10px;
   outline: none;
   border: 1px solid #f39d1c;
   border-radius: 5px;
 }
-select{
+.send select, .search select{
+  width: 250px;
   margin: 0 10px;
-  padding: 10px 20px;
+  padding: 10px 40px;
   border: 1px solid #f39d1c;
   border-radius: 5px;
   color: #f39d1c;
@@ -165,7 +168,7 @@ tr:hover td{
   border: 0;
 }
 .push{
-  padding: 10px 20px;
+  padding: 10px 10px;
   background: #f82929;
   cursor: pointer;
   color: #fff;
@@ -183,8 +186,12 @@ tr:hover td{
     padding: 0 10px;
     margin: 40px 0;
   }
+  thead th{
+    font-size: 12px;
+  }
   th,td{
-    font-size: 13px;
+    padding: 10px 5px;
+    font-size: 12px;
   }
   .send{
     padding: 20px;
@@ -193,4 +200,80 @@ tr:hover td{
 }
 
 /* -------------------------------------------------- CADASTRO DE USUARIOS -------------------------------------------------- */
+.fundinho{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  padding: 0 30px;
+  border-radius: 5px;
+}
+.container .Titulo{
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container form .detail{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .detail .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.detail .input-box input{
+  height: 35px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #f39d1c;
+  font-size: 14px;
+  border-bottom-width: 2px;
+}
+.detail .input-box select{
+  height: 35px;
+  width: 104%;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #f39d1c;
+  font-size: 14px;
 
+  border-bottom-width: 2px;
+}
+.detail .input-box span{
+  font-family: 'Poppins', sans-serif;
+}
+form .botao{
+  height: 45px;
+  margin: 45px 0;
+  width: 100%;
+}
+form .botao input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #f82929;
+  color: #fff;
+  cursor: pointer;
+}
+@media(max-width:991px){
+.container{
+  max-width: 100%;
+}
+form .detail .input-box{
+  margin-bottom: 15px;
+  width: 100%;
+}
+}
