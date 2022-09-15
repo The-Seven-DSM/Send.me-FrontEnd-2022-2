@@ -17,10 +17,10 @@ const Editor = () => {
             <h3>Verificar Email / Editar Email</h3>
         </div>
         <div className="editor">
-            <div className="pdf">
+        <div className="pdf">
                 <h3>pdf</h3>
             </div>
-            <JoditEditor
+            <JoditEditor 
             	ref={editor}
                 value={content}
                 config={config}
@@ -32,7 +32,7 @@ const Editor = () => {
         </div>
         <div className="send">
                 <button className="push">Validar Email</button>
-                <button className="empty">Enviar Email</button>
+                <button className="empty">Enviar Emails</button>
             </div>
         </>
         );

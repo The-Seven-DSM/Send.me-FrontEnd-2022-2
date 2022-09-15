@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:ital,wght@0,600;1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
 * {
   margin: 0;
   padding: 0;
 }
-
 a {
   color: #fff;
   text-decoration: none;
@@ -39,22 +37,21 @@ main{
   background: #ccc;
   margin: 50px;
 }
-
 /* -------------------------------------------------- NAVBAR -------------------------------------------------- */
 
 .logo {
   font-size: 24px;
+  text-transform: uppercase;
   letter-spacing: 4px;
 }
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
-  width: 100%;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: linear-gradient(to right, #94215d , #f8994d, #ffc855 );
   height: 8vh;
+  margin-bottom: 20px;
 }
 .nav-list {
   list-style: none;
@@ -64,23 +61,13 @@ nav {
   letter-spacing: 3px;
   margin-left: 32px;
 }
-
 @media (max-width: 991px) {
-  .logo{
-    font-size: 20px;
-    letter-spacing: 1px;
-  }
-  .nav-list li{
-    letter-spacing: 0;
+  body {
+    overflow-x: hidden;
   }
 }
 
 /* -------------------------------------------------- TABLE -------------------------------------------------- */
-
-.element.style {
-  min-height: 509px !important;
-}
-
 .scr{
   background: red;
 }
@@ -98,25 +85,24 @@ table{
   background: #fff;
 }
 
-.search input{
-  width: 250px;
+input{
+  width: 220px;
   padding: 10px 20px;
   margin: 0 10px;
   outline: none;
   border: 1px solid #f39d1c;
   border-radius: 5px;
 }
-.send select, .search select{
-  width: 250px;
+select{
   margin: 0 10px;
-  padding: 10px 40px;
+  padding: 10px 20px;
   border: 1px solid #f39d1c;
   border-radius: 5px;
   color: #f39d1c;
 }
 
 .table-section{
-  height: 330px;
+  height: 300px;
   overflow-y: scroll;
   padding: 0 120px;
 }
@@ -163,20 +149,19 @@ tr:hover td{
 #status{
   border-radius: 50%;
   background: #f82929;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   border: 0;
-  margin-bottom: 10px;
 }
 #statusV{
   border-radius: 50%;
   background: green;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   border: 0;
 }
 .push{
-  padding: 10px 10px;
+  padding: 10px 20px;
   background: #f82929;
   cursor: pointer;
   color: #fff;
@@ -189,18 +174,13 @@ tr:hover td{
   color: #000;
   border: 0;
 }
-
 @media(max-width:991px){
   .table-section{
     padding: 0 10px;
     margin: 40px 0;
   }
-  thead th{
-    font-size: 12px;
-  }
   th,td{
-    padding: 10px 5px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .send{
     padding: 20px;
@@ -208,82 +188,5 @@ tr:hover td{
   }
 }
 
-/* -------------------------------------------------- CADASTRO DE USUARIOS -------------------------------------------------- */
+/* -------------------------------------------------- PUSH BAR / TABLE -------------------------------------------------- */
 
-.fundinho{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-}
-.container{
-  max-width: 700px;
-  width: 100%;
-  padding: 0 30px;
-  border-radius: 5px;
-}
-.container .Titulo{
-  font-size: 20px;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container form .detail{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: column;
-  margin: 20px 0 12px 0;
-}
-form .detail .input-box{
-  margin-bottom: 15px;
-  width: 100%;
-}
-.detail .input-box input{
-  height: 35px;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #f39d1c;
-  font-size: 14px;
-  border-bottom-width: 2px;
-}
-.detail .input-box select{
-  height: 35px;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #f39d1c;
-  font-size: 14px;
-
-  border-bottom-width: 2px;
-}
-.detail .input-box span{
-  font-family: 'Poppins', sans-serif;
-}
-form .botao{
-  height: 45px;
-  margin: 45px 0;
-  width: 100%;
-}
-form .botao input{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  background: #f82929;
-  color: #fff;
-  cursor: pointer;
-}
-
-@media(max-width:768px){
-.container{
-  max-width: 100%;
-}
-form .detail .input-box{
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-}
