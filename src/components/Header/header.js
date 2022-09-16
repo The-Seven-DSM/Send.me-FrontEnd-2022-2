@@ -4,9 +4,9 @@ function Header(){
    
     return(
       <nav>
-        <a className="logo" href="/">Midall</a>
+        <a className="logo" href="/">Send.me</a>
         <ul className="nav-list">
-          <li><a href="/editor">Editar Email</a></li>
+          <li><a href="/Cadastro_Usuario">Cadastro de Usuários</a></li>
         </ul>
       </nav>
       // <C.Nav>

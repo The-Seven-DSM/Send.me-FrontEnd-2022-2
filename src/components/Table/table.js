@@ -1,71 +1,95 @@
-import React,{useEffect,useState} from "react";
+import React from "react";
 import Button from "./button";
 import Header from "../Header/header";
-import Axios from "axios";
-import Card from "../card";
-
 // import { FaCheckCircle } from "react-icons/fa";
 // import { FaRegCheckCircle } from "react-icons/fa";
 
+
 const Table = () => {
-    const [values,setValues] = useState([]);
-    const [listGames , setListGames ] = useState([]);
-    console.log(listGames);
-    const pega = (value) =>{
-        setValues(preValue =>({
-            ...preValue,
-            [value.target.name]:value.target.value,
-        }))
+
+    const Link = () => {
+       
+        // eslint-disable-next-line no-restricted-globals
+        location.href = `/editor`
     }
-    const sendMail = () => {
-        Axios.post(`http://localhost:3001/send`,{
-            name: listGames[0].name,
-            email: listGames[0].email
-        }
-        ).then(resp => {
-            console.log('salve'); 
-    });
-    }
-    useEffect(() =>{
-        Axios.get(`http://localhost:3001/get/associates`).then((resp) => {
-            setListGames(resp.data);
-        });
-    } ,[] )
     return (
         <>
         <Header />
         <main>
             <div className="search">
-              <input type="text" placeholder="Nome" onChange={pega}/>
+              <input type="text" placeholder="Nome"/>
               <select>
-                    <option value="0">Selecione</option>
-                    <option value="1">Teste1</option>
-                    <option value="2">Teste2</option>
+                    <option value="0">Selecione o Caderno</option>
+                    <option value="1">Cidade</option>
+                    <option value="2">Executivo I</option>
+                    <option value="3">Executivo II</option>
                 </select>
             </div>
             <div className="table-section">
             <table>
                 <thead>
                     <tr>
+                        
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Pagina</th>
+                        <th>Caderno</th>
                         <th>Status</th>
+                        
                     </tr>
                 </thead>
-          <tbody>
-            {typeof listGames !== 'undefined' && listGames.map((value) =>{
-                return <Card key={value.id} 
-                listCard={listGames}
-                setListCard={setListGames}
-                name = {value.name}
-                email = {value.email}
-                sex = {value.sex}
-                /> 
-                
-            })}
-            </tbody>
-              </table>
+                <tbody>
+                    <tr onClick={Link}> 
+                        <td>Wallace da Silva </td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Executivo I</td>
+                        <td><Button /></td>
+                    
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Executivo II</td>
+                        <td><Button /></td>
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Cidade</td>
+                        <td><Button /></td>
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Executivo I</td>
+                        <td><Button /></td>
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Executivo I</td>
+                        <td><Button /></td>
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Executivo II</td>
+                        <td><Button /></td>
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Caderno</td>
+                        <td><Button /></td>
+                    </tr>
+                    <tr onClick={Link}>
+                        <td>Wallace da Silva</td>
+                        <td>wllcfelipe@gmail.com</td>
+                        <td>Caderno</td>
+                        <td><Button /></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
             </div>
             <div className="send">
                 <p>Disparar por:</p>
@@ -74,10 +98,7 @@ const Table = () => {
                     <option value="1">Verificados</option>
                     <option value="2">Não Verificados</option>
                 </select>
-                <button className="push" 
-                onClick={() => sendMail()
-                }
-                onChange={pega}>enviar emails</button>
+                <button className="push">enviar emails</button>
             </div>
         </main>
         </>
