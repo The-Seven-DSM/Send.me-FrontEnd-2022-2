@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:ital,wght@0,600;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
@@ -10,17 +10,20 @@ a {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
-  font-family: 'Poppins', extra-bold;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 a:hover {
   opacity: 0.7;
 }
 h3{
-  font-family: 'Inter';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
   color: rgb(44, 44, 44);
 }
 main{
-  padding: 50px;
+  padding-top: 150px;
 }
 .editor{
   top: 0;
@@ -61,7 +64,7 @@ nav {
   display: flex;
 }
 .nav-list li {
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   margin-left: 32px;
 }
 
@@ -106,6 +109,11 @@ table{
   border: 1px solid #f39d1c;
   border-radius: 5px;
 }
+
+.send p{
+  font-family: 'Poppins';
+}
+
 .send select, .search select{
   width: 250px;
   margin: 0 10px;
@@ -210,7 +218,7 @@ tr:hover td{
 
 /* -------------------------------------------------- CADASTRO DE USUARIOS -------------------------------------------------- */
 
-.fundinho{
+.fundo{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,7 +228,6 @@ tr:hover td{
   max-width: 700px;
   width: 100%;
   padding: 0 30px;
-  border-radius: 5px;
 }
 .container .Titulo{
   font-size: 20px;
@@ -229,6 +236,12 @@ tr:hover td{
   justify-content: center;
   align-items: center;
 }
+
+.container .Titulo a{
+  margin-right: 16px;
+  display: flex;
+}
+
 .container form .detail{
   display: flex;
   flex-wrap: wrap;
@@ -245,36 +258,52 @@ form .detail .input-box{
   width: 100%;
   outline: none;
   border-radius: 5px;
-  border: 1px solid #f39d1c;
+  border: 2px solid #9F215D;
   font-size: 14px;
-  border-bottom-width: 2px;
+}
+.detail .input-box input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(44, 44, 44);
+  opacity: 0.8; 
+  padding-left: 4px ;
+}
+.aaa{
+  color: rgb(44, 44, 44);
+  opacity: 0.8; 
 }
 .detail .input-box select{
   height: 35px;
   width: 100%;
   outline: none;
   border-radius: 5px;
-  border: 1px solid #f39d1c;
+  border: 2px solid #9F215D;
   font-size: 14px;
-
-  border-bottom-width: 2px;
+}
+option[value=""][disabled] {
+  display: none;
 }
 .detail .input-box span{
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 form .botao{
+  display: flex;
   height: 45px;
   margin: 45px 0;
   width: 100%;
+  justify-content: flex-end;
 }
 form .botao input{
   height: 100%;
-  width: 100%;
+  width: 30%;
+  border-radius: 10px;
   outline: none;
   border: none;
-  background: #f82929;
+  background: #E66C51;
   color: #fff;
   cursor: pointer;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 @media(max-width:768px){

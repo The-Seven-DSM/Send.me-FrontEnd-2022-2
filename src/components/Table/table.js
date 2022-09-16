@@ -95,10 +95,10 @@ const Table = () => {
                 <p>Disparar por:</p>
                 <select>
                     <option value="0">Selecione</option>
-                    <option value="1">Verificados</option>
-                    <option value="2">Não Verificados</option>
+                    <option value="1">Todos</option>
+                    <option value="2">Verificados</option>
                 </select>
-                <button className="push">enviar emails</button>
+                <button className="push">ENVIAR EMAILS</button>
             </div>
         </main>
         </>

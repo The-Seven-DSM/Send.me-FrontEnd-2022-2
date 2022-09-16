@@ -1,20 +1,22 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react'
 import Header from '../Header/header'
+import ArrowBack from '../../assets/img/arrowback.png'
 
 const Cadastro_Usuario = () => {
   return (
     <>
         <Header />
-        <div className="fundinho">
+        <div className="fundo">
             <div className="container">
                 <div className="Titulo">
+                    <a href="/"><img src={ArrowBack} alt="Minha Figura"/></a>
                     <h3>Cadastro de Associados</h3>
                 </div>
                 <form>
                 <div className="detail">
                     <div className="input-box">
-                        <span>Nome Completo</span>
+                        <span>Nome</span>
                         <input placeholder="Digite seu Nome Completo"/>
                     </div>
                     <div className="input-box">
@@ -22,15 +24,15 @@ const Cadastro_Usuario = () => {
                         <input placeholder="Digite seu Email"/>
                     </div>
                     <div className="input-box">
-                        <span>Sexo</span>
-                        <select>
-                            <option value="0">Selecione</option>
-                            <option value="1">Masculino</option>
-                            <option value="2">Feeminino</option>
+                        <span>Gênero</span>
+                        <select  placeholder="Digite seu Nome Completo">
+                            <option value="" disabled selected>Selecione:</option>
+                            <option value="0">Masculino</option>
+                            <option value="1">Feminino</option>
                         </select>
                     </div>
                         <div className="botao">
-                            <input type="submit" value="Adicionar"/>
+                            <input type="submit" value="CADASTRAR"/>
                         </div>
                     </div>
                 </form>
