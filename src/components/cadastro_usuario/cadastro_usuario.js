@@ -1,8 +1,30 @@
 /* eslint-disable jsx-a11y/heading-has-content */
-import React from 'react'
+import Axios from "axios";
+import React,{useState} from "react";
 import Header from '../Header/header'
 
+
 const Cadastro_Usuario = () => {
+    const [values,setValues] = useState([]);
+    const pega = (value) =>{
+        setValues(preValue =>({
+            
+            ...preValue,
+            [value.target.name]:value.target.value,
+            
+        }))
+    }
+    
+    const manda = () => {
+        Axios.post(`http://localhost:3001/create/associate`,{
+            nome: values.nome,
+            email: values.email,
+            sexo: values.sexo
+        }
+        ).then(resp => {
+            console.log(values); 
+    });
+    }
   return (
     <>
         <Header />
@@ -11,29 +33,29 @@ const Cadastro_Usuario = () => {
                 <div className="Titulo">
                     <h3>Cadastro de Associados</h3>
                 </div>
-                <form>
+                {/* <form> */}
                 <div className="detail">
                     <div className="input-box">
                         <span>Nome Completo</span>
-                        <input placeholder="Digite seu Nome Completo"/>
+                        <input onChange={pega} name="nome"placeholder="Digite seu Nome Completo"/>
                     </div>
                     <div className="input-box">
                         <span>Email</span>
-                        <input placeholder="Digite seu Email"/>
+                        <input onChange={pega} name="email"placeholder="Digite seu Email"/>
                     </div>
                     <div className="input-box">
                         <span>Sexo</span>
-                        <select>
+                        <select onChange={pega} name='sexo'>
                             <option value="0">Selecione</option>
-                            <option value="1">Masculino</option>
-                            <option value="2">Feeminino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
                         </select>
                     </div>
                         <div className="botao">
-                            <input type="submit" value="Adicionar"/>
+                            <input onClick={() => manda()} type="submit" value="Adicionar"/>
                         </div>
                     </div>
-                </form>
+                {/* </form> */}
             </div>
         </div>
        
