@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react'
 import Header from '../Header/header'
-import ArrowBack from '../../assets/img/arrowback.png'
+import Voltar from '../../assets/img/voltar.png'
 
 const Cadastro_Usuario = () => {
   return (
@@ -9,8 +9,8 @@ const Cadastro_Usuario = () => {
         <Header />
         <div className="fundo">
             <div className="container">
-                <div className="Titulo">
-                    <a href="/"><img src={ArrowBack} alt="Minha Figura"/></a>
+                <div className="voltar">
+                    <a href="/"><img src={Voltar} alt="Voltar"/></a>
                     <h3>Cadastro de Associados</h3>
                 </div>
                 <form>

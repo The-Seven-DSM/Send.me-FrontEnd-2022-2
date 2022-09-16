@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import JoditEditor from "jodit-react";
 import Header from "../Header/header";
+import Voltar from '../../assets/img/voltar.png'
 
 const Editor = () => {
 	const editor = useRef(null)
@@ -13,12 +14,14 @@ const Editor = () => {
 	return (
         <>
         <Header />
-        <div className="search">
-            <h3>Verificar Email / Editar Email</h3>
-        </div>
+        <div className="voltaremail">
+                    <a href="/"><img src={Voltar} alt="Voltar"/></a>
+                    <h3>Nome do Serumaninho</h3>
+                </div>
+
         <div className="editor">
             <div className="pdf">
-                <h3>pdf</h3>
+                <p>pdf</p>
             </div>
             <JoditEditor
             	ref={editor}
@@ -30,9 +33,9 @@ const Editor = () => {
             />
            
         </div>
-        <div className="send">
-                <button className="push">Validar Email</button>
-                <button className="empty">Enviar Email</button>
+        <div className="email-botao">
+                <button className="validar-email">VALIDAR EMAIL</button>
+                <button className="enviar-email">ENVIAR EMAIL</button>
             </div>
         </>
         );
