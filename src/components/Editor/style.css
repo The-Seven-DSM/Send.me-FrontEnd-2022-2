@@ -1,69 +1,119 @@
 .voltaremail {
-    font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    padding: 4rem 0 2rem 0;
-    margin-left: 20%;
-  }
-  
-  .voltaremail a {
-    margin-right: 16px;
-    display: flex;
-  }
-  
-  .editor {
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
-  }
-  .pdf {
-    width: 400px;
-    height: 500px;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0 2rem 0;
+  margin-left: 20%;
+}
+
+.voltaremail a {
+  margin-right: 16px;
+  display: flex;
+}
+
+.editor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pdf {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #9f215d;
+  border-radius: 10px;
+  margin-right: 130px
+}
+
+.email-body {
+  resize: none;
+  background-color: #dddddd;
+  color: rgb(44, 44, 44);
+  padding: 1em;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: all 0.2s;
+  width: 400px;
+}
+
+.email-body:hover {
+  cursor: pointer;
+  background-color: #eeeeee;
+}
+
+.email-botao {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 40px 20px;
+  padding: 20px 20% 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.validar-email {
+  width: 210px;
+  height: 45px;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #000;
+  outline: none;
+  border: 2px solid #e66c51;
+  font-size: 16px;
+  margin-left: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.enviar-email {
+  width: 210px;
+  height: 45px;
+  background: #e66c51;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  font-size: 16px;
+  margin-left: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+@media (max-width: 1030px) {
+  .email-botao {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #9f215d;
-    border-radius: 10px;
-    margin-right:130px
+    padding: 30px 0 0 0;
   }
-  
-  .email-botao {
-    display: flex;
-    justify-content: flex-end;
+
+  .pdf {
+    margin-bottom: 50px;
+    margin-right: 0px
+  }
+
+  .editor {
+    flex-direction: column;
     align-items: center;
-    margin: 40px 20px;
-    padding: 20px 20% 20px 20px;
-    font-family: 'Poppins', sans-serif;
   }
-  
-  .validar-email {
-    width: 210px;
-    height: 45px;
-    background: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #000;
-    outline: none;
-    border: 2px solid #e66c51;
-    font-size: 16px;
-    margin-left: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+
+  .email-body {
+    height: 200px;
+    margin: 0 10px
   }
-  
-  .enviar-email {
-    width: 210px;
-    height: 45px;
-    background: #e66c51;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    outline: none;
-    font-size: 16px;
-    margin-left: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+
+  .voltaremail{
+    margin-right: 10%;
   }
-  
+
+}

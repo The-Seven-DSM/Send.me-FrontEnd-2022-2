@@ -2,37 +2,32 @@ import React,{ useState, useEffect} from "react";
 import Axios from "axios";
 import Card from "./card";
 import Header from "../Header/header";
-
 import month from "../utils/month";
-// import { FaCheckCircle } from "react-icons/fa";
-// import { FaRegCheckCircle } from "react-icons/fa";
-
 
 const Table = () => {
     const [listGames, setListGames] = useState([]);
-    const [Assoc, setAssoc] = useState([])
-    console.log(listGames);
-    console.log(Assoc);
+    // const [setAssoc] = useState([]);
     const sendMail = () => {
         Axios.post(`http://localhost:3001/send`, {
-            name: listGames.map((item) => item.nome),
-            email: listGames.map((item) => item.email)
+            name: listGames.map((item) => item.associado.nome),
+            email: listGames.map((item) => item.associado.email),
+            corpo: listGames.map((item) => item.corpo),
         }
         ).then(resp => {
             console.log(resp);
         });
     }
+    
     useEffect(() => {
         Axios.get(`http://localhost:3001/get/emails`).then((resp) => {
             setListGames(resp.data);
         });
     }, [])
-    useEffect(() => {
-        Axios.get(`http://localhost:3001/get/associates`).then((resp) => {
-            setAssoc(resp.data);
-        });
-    }, [])
-
+    // useEffect(() => {
+    //     Axios.get(`http://localhost:3001/get/associates`).then((resp) => {
+    //         setAssoc(resp.data);
+    //     });
+    // }, [])
     const data = new Date();
     const dia = data.getDate();
     const mes = month[data.getMonth()];
@@ -65,13 +60,17 @@ const Table = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {typeof listGames !== 'undefined' && listGames.map((value) => {
-                                return <Card key={value.id}
+                            {typeof listGames !== 'undefined'&& listGames.map((value) => {
+                                return !value.envio ? <Card 
                                     listCard={listGames}
                                     setListCard={setListGames}
-                                    pagina={value.pagina}
-                                    estado={value.estado}
+                                    id={value.id_email}
+                                    nome={value.associado.nome}
+                                    email={value.associado.email}
+                                    pagina={value.pagina.split('/')[8]}
+                                    estado={value.estado}  
                                 />
+                                : null
                             })}
                         </tbody>
                     </table>

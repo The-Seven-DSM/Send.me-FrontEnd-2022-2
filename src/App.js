@@ -6,6 +6,7 @@ import '../src/components/Table/style.css'
 import '../src/components/cadastro_usuario/style.css'
 import '../src/components/Editor/style.css'
 import '../src/components/Header/style.css'
+import '../src/components/Sem-Caderno/style.css'
 
 import Table from './components/Table/table';
 import Editor from './components/Editor/editor';
@@ -14,7 +15,7 @@ import Cadastro_Usuario from './components/cadastro_usuario/cadastro_usuario';
 
 const App = () => {
   return(
-
+    
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Table />} />
