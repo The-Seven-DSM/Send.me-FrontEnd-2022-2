@@ -1,0 +1,98 @@
+.fundo {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 20%;
+    height: 90vh;
+  }
+  
+  .container {
+    max-width: 700px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 2rem auto;
+  }
+  
+  .voltar {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .voltar a {
+    margin-right: 16px;
+    display: flex;
+  }
+  
+  .container form .detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0 12px 0;
+  }
+  form .detail .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .detail .input-box input {
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #9f215d;
+    font-size: 14px;
+  }
+  .detail .input-box input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(44, 44, 44);
+    opacity: 0.8;
+    padding-left: 4px;
+  }
+  .detail .input-box select {
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #9f215d;
+    font-size: 14px;
+  }
+  option[value=''][disabled] {
+    display: none;
+  }
+  .detail .input-box span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
+  .botao {
+    display: flex;
+    height: 45px;
+    margin: 45px 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .botao input {
+    height: 100%;
+    width: 30%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: #e66c51;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%;
+    }
+    form .detail .input-box {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+  

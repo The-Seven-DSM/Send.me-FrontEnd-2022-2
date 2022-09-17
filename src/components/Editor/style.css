@@ -1,0 +1,69 @@
+.voltaremail {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0 2rem 0;
+    margin-left: 20%;
+  }
+  
+  .voltaremail a {
+    margin-right: 16px;
+    display: flex;
+  }
+  
+  .editor {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+  }
+  .pdf {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #9f215d;
+    border-radius: 10px;
+    margin-right:130px
+  }
+  
+  .email-botao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 40px 20px;
+    padding: 20px 20% 20px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .validar-email {
+    width: 210px;
+    height: 45px;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #000;
+    outline: none;
+    border: 2px solid #e66c51;
+    font-size: 16px;
+    margin-left: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  .enviar-email {
+    width: 210px;
+    height: 45px;
+    background: #e66c51;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    margin-left: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  

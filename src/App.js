@@ -1,9 +1,16 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+
+import './global.css';
+import '../src/components/Table/style.css'
+import '../src/components/cadastro_usuario/style.css'
+import '../src/components/Editor/style.css'
+import '../src/components/Header/style.css'
+
 import Table from './components/Table/table';
-import './App.css';
 import Editor from './components/Editor/editor';
 import Cadastro_Usuario from './components/cadastro_usuario/cadastro_usuario';
+
 
 const App = () => {
   return(
