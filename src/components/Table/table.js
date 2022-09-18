@@ -9,9 +9,8 @@ const Table = () => {
     // const [setAssoc] = useState([]);
     const sendMail = () => {
         Axios.post(`http://localhost:3001/send`, {
-            name: listGames.map((item) => item.associado.nome),
-            email: listGames.map((item) => item.associado.email),
-            corpo: listGames.map((item) => item.corpo),
+            id_email: listGames.map((item) => item.id_email),
+            
         }
         ).then(resp => {
             console.log(resp);
@@ -23,16 +22,10 @@ const Table = () => {
             setListGames(resp.data);
         });
     }, [])
-    // useEffect(() => {
-    //     Axios.get(`http://localhost:3001/get/associates`).then((resp) => {
-    //         setAssoc(resp.data);
-    //     });
-    // }, [])
     const data = new Date();
     const dia = data.getDate();
     const mes = month[data.getMonth()];
     const ano = data.getFullYear();
-
     return (
         <>
             <Header />
@@ -82,7 +75,7 @@ const Table = () => {
                         <option value="0">Todos</option>
                         <option value="1">Verificados</option>
                     </select>
-                    <button className="enviar-email-home"onClick={() => sendMail()}>ENVIAR EMAILS</button>
+                    <a href="/"><button className="enviar-email-home"onClick={() => sendMail()}>ENVIAR EMAILS</button></a>
                 </div>
             </main>
         </>

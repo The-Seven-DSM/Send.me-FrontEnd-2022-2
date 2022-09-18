@@ -34,15 +34,15 @@ const Cadastro_Usuario = () => {
                     </div>
                 <div className="container">
                         <div className="detail">
-                            <div className="input-box">
+                            <div  className="input-box">
                                 <span>Nome</span>
-                                <input onChange={pega} name="nome" placeholder="Digite seu Nome Completo" />
+                                <input  onChange={pega} name="nome" placeholder="Digite seu Nome Completo"  />
                             </div>
-                            <div className="input-box">
+                            <div  className="input-box">
                                 <span>Email</span>
-                                <input onChange={pega} name="email" placeholder="Digite seu Email" />
+                                <input  onChange={pega} name="email" placeholder="Digite seu Email" />
                             </div>
-                            <div className="input-box">
+                            <div  className="input-box">
                                 <span>Gênero</span>
                                 <select name="sexo" onChange={pega} placeholder="Digite seu Nome Completo">
                                     <option value="" disabled selected>Selecione:</option>
