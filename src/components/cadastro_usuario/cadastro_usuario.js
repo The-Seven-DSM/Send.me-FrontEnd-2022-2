@@ -50,9 +50,11 @@ const Cadastro_Usuario = () => {
                                     <option value="Feminino">Feminino</option>
                                 </select>
                             </div>
+                            <a href="/">
                             <div className="botao">
                                 <input  onClick={() => manda()} type="submit"value="CADASTRAR" />
                             </div>
+                            </a>
                         </div>
                     
                 </div>
