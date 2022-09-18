@@ -7,7 +7,7 @@ export default function Card(props) {
     const bb = props.nome
     const Link = () => {
         // eslint-disable-next-line no-restricted-globals
-        location.href = '/editor?id='+aa+'&nome='+bb
+        location.href = '/editor?id='+aa+'&nome='+bb.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
       }
     
     return <tr onClick =  { Link }>
