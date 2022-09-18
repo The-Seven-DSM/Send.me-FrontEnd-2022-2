@@ -12,7 +12,7 @@
     padding: 0 60px;
   }
   
-  .titulo {
+  .title-table{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: rgb(44, 44, 44);
@@ -20,14 +20,14 @@
     justify-content: center;
     margin-bottom: 40px;
   }
-  .busca {
+  .search {
     display: flex;
     align-items: center;
     padding: 20px 100px;
     background: #fff;
   }
   
-  .busca input {
+  .search input {
     width: 300px;
     height: 35px;
     margin: 0 10px;
@@ -39,12 +39,12 @@
     color: rgb(44, 44, 44);
   }
   
-  .busca input::placeholder {
+  .search input::placeholder {
     color: #f39d1c;
     color: rgb(44, 44, 44);
   }
   
-  .busca select {
+  .search select {
     width: 250px;
     height: 40px;
     padding: 0px 16px;
@@ -95,7 +95,7 @@
     cursor: pointer;
   }
   
-  .enviar {
+  .send-table {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -103,7 +103,7 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  .enviar-email-home {
+  .send-email-home {
     width: 200px;
     height: 30px;
     background: #e66c51;
@@ -118,7 +118,7 @@
     font-weight: 400;
   }
   
-  .enviar select {
+  .send-table select {
     width: 200px;
     height: 30px;
     border-radius: 5px;
@@ -161,7 +161,7 @@
       font-size: 12px;
     }
   
-    .enviar {
+    .send-table {
       padding: 20px;
       justify-content: center;
     }

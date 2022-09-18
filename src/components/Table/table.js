@@ -8,6 +8,7 @@ const Table = () => {
     const [listGames, setListGames] = useState([]);
     // const [setAssoc] = useState([]);
     const sendMail = () => {
+        alert("Todos os emails verificados foram enviados");
         Axios.post(`http://localhost:3001/send`, {
             id_email: listGames.map((item) => item.id_email),
             
@@ -30,8 +31,8 @@ const Table = () => {
         <>
             <Header />
             <main>
-                <h1 className="titulo"> Diário Oficial - Dia {dia} de {mes} de {ano} </h1>
-                <div className="busca">
+                <h1 className="title-table"> Diário Oficial - Dia {dia} de {mes} de {ano} </h1>
+                <div className="search">
                     <input type="text" placeholder="Nome" />
                     <select>
                         <option value="" disabled selected>Selecione o Caderno</option>
@@ -68,14 +69,14 @@ const Table = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="enviar">
+                <div className="send-table">
                     <p>Disparar por:</p>
                     <select>
                         <option value="" disabled selected>Selecione</option>
                         <option value="0">Todos</option>
                         <option value="1">Verificados</option>
                     </select>
-                    <a href="/"><button className="enviar-email-home"onClick={() => sendMail()}>ENVIAR EMAILS</button></a>
+                    <a href="/"><button className="send-email-home"onClick={() => sendMail()}>ENVIAR EMAILS</button></a>
                 </div>
             </main>
         </>

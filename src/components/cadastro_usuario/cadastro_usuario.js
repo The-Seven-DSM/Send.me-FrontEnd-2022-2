@@ -18,7 +18,7 @@ const Cadastro_Usuario = () => {
         Axios.post(`http://localhost:3001/create/associate`, {
             nome: values.nome,
             email: values.email,
-            sexo: values.sexo
+            genero: values.genero
         }
         ).then(resp => {
             console.log(values);
@@ -27,36 +27,37 @@ const Cadastro_Usuario = () => {
     return (
         <>
             <Header />
-            <div className="fundo">
-            <div className="voltar">
+            <div className="background">
+            <div className="back-button-registration">
                         <a href="/"><img src={Voltar} alt="Voltar" /></a>
                         <h3>Cadastro de Associados</h3>
                     </div>
                 <div className="container">
-                        <div className="detail">
+                    
+                        <form className="detail">
                             <div  className="input-box">
                                 <span>Nome</span>
-                                <input  onChange={pega} name="nome" placeholder="Digite seu Nome Completo"  />
+                                <input  onChange={pega}  name="nome" placeholder="Digite seu Nome Completo" required  />
                             </div>
                             <div  className="input-box">
                                 <span>Email</span>
-                                <input  onChange={pega} name="email" placeholder="Digite seu Email" />
+                                <input  onChange={pega} type="email" name="email" placeholder="Digite seu Email" required />
                             </div>
                             <div  className="input-box">
                                 <span>Gênero</span>
-                                <select name="sexo" onChange={pega} placeholder="Digite seu Nome Completo">
+                                <select name="genero" onChange={pega} placeholder="Digite seu Nome Completo" required>
                                     <option value="" disabled selected>Selecione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
                                 </select>
                             </div>
-                            <a href="/">
-                            <div className="botao">
+                            
+                        </form>
+                        <a href="/">
+                            <div className="button-registration">
                                 <input  onClick={() => manda()} type="submit"value="CADASTRAR" />
                             </div>
-                            </a>
-                        </div>
-                    
+                        </a>
                 </div>
             </div>
 

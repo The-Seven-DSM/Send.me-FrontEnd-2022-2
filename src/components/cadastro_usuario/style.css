@@ -1,4 +1,4 @@
-.fundo {
+.background {
     display: flex;
     flex-direction: column;
     margin: 4rem 20%;
@@ -12,7 +12,7 @@
     margin: 2rem auto;
   }
   
-  .voltar {
+  .back-button-registration {
     font-size: 20px;
     font-weight: 500;
     display: flex;
@@ -20,7 +20,7 @@
     align-items: center;
   }
   
-  .voltar a {
+  .back-button-registration a {
     margin-right: 16px;
     display: flex;
   }
@@ -65,14 +65,14 @@
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
   }
-  .botao {
+  .button-registration {
     display: flex;
     height: 45px;
     margin: 45px 0;
     width: 100%;
     justify-content: flex-end;
   }
-  .botao input {
+  .button-registration input {
     height: 100%;
     width: 30%;
     border-radius: 10px;

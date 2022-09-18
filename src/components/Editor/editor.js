@@ -23,6 +23,7 @@ const Editor = () => {
     var ida = "/get/email/" + window.location.href.split('=')[1].split('&nome')[0]
     let use = window.location.href.split('=')[2].split('%20').join(' ')
     const validar = () => {
+        alert("O email foi validado!");
         Axios.post(`http://localhost:3001/validar`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
@@ -32,6 +33,7 @@ const Editor = () => {
         });
     }
     const sendMail = () => {
+        alert("O email foi em enviado!");
         Axios.post(`http://localhost:3001/send/direto`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
@@ -86,11 +88,11 @@ const Editor = () => {
     return (
         <>
             <Header />
-            <div className="voltaremail" >
+            <div className="back-button-edit" >
                 <a href="/"><img src={Voltar} alt="Voltar" /></a>
                 <h3>{use}</h3>
             </div>
-            <div className="editor">
+            <div className="edit">
                 <div>
                     <iframe className="pdf" src={paginaSrc} width="100%" height="500px" />
                                     
@@ -103,9 +105,9 @@ const Editor = () => {
                 <textarea defaultValue={texto} type='text' onChange={pega} rows="5" cols="30" className="email-body" name="emailCrpo">
                 </textarea>
             </div>
-            <div className="email-botao">
-                <a href="/"><button onClick={() => validar()} className="validar-email">VALIDAR EMAIL</button></a>
-                <a href="/"><button onClick={() => sendMail()} className="enviar-email">ENVIAR EMAIL</button></a>
+            <div className="button-edit">
+                <a href="/"><button onClick={() => validar()} className="validate-button">VALIDAR EMAIL</button></a>
+                <a href="/"><button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button></a>
             </div>
         </>
     );
