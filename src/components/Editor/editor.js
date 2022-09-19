@@ -14,14 +14,17 @@ const Editor = () => {
 
         }))
     }
+    const [usea,setUser] = useState([])
     const [Email, setEmail] = useState([]);
+    const [pa,setPa] = useState([]);
     const [texto, setTexto] = useState('')
     const [pagina, setPagina] = useState(0);
     const [paginaSrc, setPaginaSrc] = useState('')
-    console.log(pagina)
-    
+
+    var fk = "/get/associate/" + Email.fk_id_associado
     var ida = "/get/email/" + window.location.href.split('=')[1].split('&nome')[0]
     let use = window.location.href.split('=')[2].split('%20').join(' ')
+    
     const validar = () => {
         Axios.post(`http://localhost:3001/validar`, {
             id_email: Email.id_email,
@@ -36,6 +39,10 @@ const Editor = () => {
         Axios.post(`http://localhost:3001/send/direto`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
+            fk_id_associado: Email.fk_id_associado,
+            // nome: Email.associado.nome,
+            // email: Email.associado.email,
+            
         }
         ).then(resp => {
             console.log(resp);
@@ -43,8 +50,15 @@ const Editor = () => {
         alert("O email foi em enviado!");
     }
     useEffect(() => {
+        Axios.get(`http://localhost:3001${fk}`).then((resp) => {
+        setUser(resp.data)
+            
+        });
+    }, [])
+    useEffect(() => {
         Axios.get(`http://localhost:3001${ida}`).then((resp) => {
             setEmail(resp.data);
+            setPa(resp.data.fk_id_associado);
             setPaginaSrc(resp.data.pagina);
             var paginaEx = resp.data.pagina;
             setPagina(paginaEx.split('_')[1].split('.')[0]);
@@ -85,6 +99,7 @@ const Editor = () => {
         setPagina(Number(numero))
     }
 
+
     return (
         <>
             <Header />
@@ -98,7 +113,7 @@ const Editor = () => {
                                     
                     <div className="arrow-page">
                         <button className="arrow-button" onClick={() => paginaSub(pagina)}><img className="ArrowImg" src={ArrowLeft} alt="Seta Direita" /></button>
-                        <p > Pagina:{pagina}</p>
+                        <p > Página:{pagina}</p>
                         <button className="arrow-button" onClick={() => paginaSom(pagina)}><img className="ArrowImg" src={ArrowRight} alt="Seta Esquerda" /></button>
                     </div>
                 </div>
@@ -107,7 +122,7 @@ const Editor = () => {
             </div>
             <div className="button-edit">
                 <a href="/"><button onClick={() => validar()} className="validate-button">VALIDAR EMAIL</button></a>
-                <a href="/"><button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button></a>
+                <button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button>
             </div>
         </>
     );

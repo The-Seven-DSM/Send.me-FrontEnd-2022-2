@@ -28,22 +28,23 @@ const Cadastro_Usuario = () => {
         <>
             <Header />
             <div className="background">
-            <div className="back-button-registration">
-                        <a href="/"><img src={Voltar} alt="Voltar" /></a>
-                        <h3>Cadastro de Associados</h3>
-                    </div>
+                <div className="back-button-registration">
+                    <a href="/"><img src={Voltar} alt="Voltar" /></a>
+                    <h3>Cadastro de Associados</h3>
+                </div>
                 <div className="container">
-                    
-                        <form className="detail">
-                            <div  className="input-box">
+                    <form action="/">
+                        <div className="detail">
+
+                            <div className="input-box">
                                 <span>Nome</span>
-                                <input  onChange={pega}  name="nome" placeholder="Digite seu Nome Completo" required  />
+                                <input onChange={pega} name="nome" placeholder="Digite seu Nome Completo" required />
                             </div>
-                            <div  className="input-box">
+                            <div className="input-box">
                                 <span>Email</span>
-                                <input  onChange={pega} type="email" name="email" placeholder="Digite seu Email" required />
+                                <input onChange={pega} type="email" name="email" placeholder="Digite seu Email" required />
                             </div>
-                            <div  className="input-box">
+                            <div className="input-box">
                                 <span>Gênero</span>
                                 <select name="genero" onChange={pega} placeholder="Digite seu Nome Completo" required>
                                     <option value="" disabled selected>Selecione:</option>
@@ -52,12 +53,14 @@ const Cadastro_Usuario = () => {
                                 </select>
                             </div>
                             
-                        </form>
-                        <a href="/">
-                            <div className="button-registration">
-                                <input  onClick={() => manda()} type="submit"value="CADASTRAR" />
-                            </div>
-                        </a>
+                        </div>
+                        
+                                <div className="button-registration">
+                                    <input onClick={() => manda()} type="submit" value="CADASTRAR" />
+                                </div>
+                            
+                            </form>
+
                 </div>
             </div>
 
