@@ -26,7 +26,9 @@ $ yarn install
 $ yarn start
 ```
 
-A aplicação iniciará localmente na porta 3000. Use o navegador para acessar o link [http://localhost:3000](http://localhost:3000) e executar apenas o FrontEnd da aplicação. Caso queira rodar a aplicação por completo baixe os repositórios [BackEnd](https://github.com/The-Seven-DSM/Send.me-BackEnd-2022-2) e [Bot](https://github.com/The-Seven-DSM/Send.me-Bot-2022-2) e siga suas intruções.
+A aplicação iniciará localmente na porta 3000. Use o navegador para acessar o link [http://localhost:3000](http://localhost:3000) e executar apenas o FrontEnd da aplicação.
+<br><br>
+Caso queira rodar a aplicação por completo baixe os repositórios [BackEnd](https://github.com/The-Seven-DSM/Send.me-BackEnd-2022-2) e [Bot](https://github.com/The-Seven-DSM/Send.me-Bot-2022-2) e siga suas intruções.
 
 
 
