@@ -23,7 +23,6 @@ const Editor = () => {
     var ida = "/get/email/" + window.location.href.split('=')[1].split('&nome')[0]
     let use = window.location.href.split('=')[2].split('%20').join(' ')
     const validar = () => {
-        alert("O email foi validado!");
         Axios.post(`http://localhost:3001/validar`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
@@ -31,9 +30,9 @@ const Editor = () => {
         ).then(resp => {
             console.log(resp);
         });
+        alert("O email foi validado!");
     }
     const sendMail = () => {
-        alert("O email foi em enviado!");
         Axios.post(`http://localhost:3001/send/direto`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
@@ -41,6 +40,7 @@ const Editor = () => {
         ).then(resp => {
             console.log(resp);
         });
+        alert("O email foi em enviado!");
     }
     useEffect(() => {
         Axios.get(`http://localhost:3001${ida}`).then((resp) => {

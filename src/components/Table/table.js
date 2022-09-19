@@ -7,17 +7,24 @@ import month from "../utils/month";
 const Table = () => {
     const [listGames, setListGames] = useState([]);
     // const [setAssoc] = useState([]);
+    // console.log(listGames.map((item) => item.associado.nome));
+    // console.log(listGames.map((item) => item.corpo));
+     
+    console.log(listGames.map((item) => item.estado == true && item.envio==false? item.id_email: null));
     const sendMail = () => {
-        alert("Todos os emails verificados foram enviados");
+    
         Axios.post(`http://localhost:3001/send`, {
-            id_email: listGames.map((item) => item.id_email),
+            id_email: listGames.map((item) => item.estado == true && item.envio==false? item.id_email: null),
+            nome: listGames.map((item) => item.estado && !item.envio ? item.associado.nome: null ),
+            corpo: listGames.map((item) => item.estado && !item.envio? item.corpo: null),
+            email: listGames.map((item) => item.estado && !item.envio?item.associado.email: null),
             
         }
         ).then(resp => {
             console.log(resp);
         });
+        alert("Todos os emails verificados foram enviados");
     }
-    
     useEffect(() => {
         Axios.get(`http://localhost:3001/get/emails`).then((resp) => {
             setListGames(resp.data);
@@ -76,7 +83,8 @@ const Table = () => {
                         <option value="0">Todos</option>
                         <option value="1">Verificados</option>
                     </select>
-                    <a href="/"><button className="send-email-home"onClick={() => sendMail()}>ENVIAR EMAILS</button></a>
+                    <a href="/"><button className="send-email-home" onClick={() => sendMail()}>ENVIAR EMAILS</button>
+                    </a>
                 </div>
             </main>
         </>
