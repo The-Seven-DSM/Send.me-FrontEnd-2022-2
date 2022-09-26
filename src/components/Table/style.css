@@ -148,6 +148,14 @@
   }
   
   @media (max-width: 991px) {
+  
+    .search {
+      padding: 20px 0;
+      margin: 0 20px;
+    }
+    .title-table{
+      margin: 0 40px;
+    }
     .table-section {
       padding: 0 10px;
       margin: 40px 0;

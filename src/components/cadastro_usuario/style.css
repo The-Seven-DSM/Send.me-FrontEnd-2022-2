@@ -8,7 +8,6 @@
   .container {
     max-width: 700px;
     width: 100%;
-    padding: 0 30px;
     margin: 2rem auto;
   }
   
@@ -87,6 +86,9 @@
   }
   
   @media (max-width: 768px) {
+    .background {
+      margin: 4rem 10%;
+  }
     .container {
       max-width: 100%;
     }
