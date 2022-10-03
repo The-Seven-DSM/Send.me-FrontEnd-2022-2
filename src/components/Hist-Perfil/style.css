@@ -1,0 +1,44 @@
+
+.containerPerfil {
+    margin-top: 32px;
+    display: flex;
+    align-items: center; /*alinhar vertical*/
+    justify-content: space-between; /*alinhar em horizontal*/
+    border-radius: 5px;
+    border: 2px solid #E66C51;
+    width: 100%;
+    height: 200px;
+ }
+.direito{
+/* margin-top: 150px; */
+padding: 0 5px;
+/* height: 200px; */
+/* background-color: rgb(131, 142, 238); */
+display: flex;
+flex-direction: column;
+}
+
+/* .direito img{
+    margin-bottom: 150px;
+} */
+.meio{
+height: 120px;
+/* background-color: aqua; */
+display: flex;
+flex-direction: column;
+    
+}
+.meio p{
+    padding: 22px 0px;
+}
+.esquerda{
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+
+}
+.esquerda p{
+    padding: 11px 0px;
+}
+

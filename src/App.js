@@ -7,11 +7,19 @@ import '../src/components/cadastro_usuario/style.css'
 import '../src/components/Editor/style.css'
 import '../src/components/Header/style.css'
 import '../src/components/Sem-Caderno/style.css'
+import '../src/components/login/style.css'
+import '../src/components/Hist-Perfil/style.css'
+import '../src/components/Hist-Perfil/historico/style.css'
+import '../src/components/Lista-assoc/style.css'
 
 import Table from './components/Table/table';
 import Editor from './components/Editor/editor';
 import Cadastro_Usuario from './components/cadastro_usuario/cadastro_usuario';
 import SemCaderno from './components/Sem-Caderno/sem_caderno';
+import Login from './components/login/login';
+import Perfil from './components/Hist-Perfil/perfil';
+import Lista from './components/Lista-assoc/lista';
+
 
 const d = new Date(); 
 const dia = 5 // d.getDay()
@@ -24,6 +32,9 @@ const App = () => {
         <Route path='/' element={ dia == 0 || dia == 1 ? <SemCaderno/>:<Table/> } />
         <Route path='/editor' element={<Editor />} />
         <Route path='/cadastro_usuario' element={<Cadastro_Usuario />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/perfil' element={<Perfil />} />
+        <Route path='/Lista' element={<Lista />} />
       </Routes>
     </BrowserRouter>
   )

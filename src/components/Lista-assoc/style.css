@@ -1,0 +1,14 @@
+.bloco{
+    margin: 16px 0 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 85px;
+    border-radius: 5px;
+    border: 2px solid #E66C51;
+    padding: 0 10px;
+}
+.back-button-registration{
+    margin-bottom: 32px;
+}
