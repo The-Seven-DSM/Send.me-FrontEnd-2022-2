@@ -1,8 +1,9 @@
 .salve{
+    height: 600px;
     display: flex;
     align-items: center; /*alinhar vertical*/
     justify-content: center; /*alinhar em horizontal*/
-
+  
 }
 .login{
    display: flex;
@@ -10,16 +11,19 @@
    justify-content: center; /*alinhar em horizontal*/
    flex-direction: column; /*quebrar coluna ou linha*/
    border-radius: 5px;
-   border: 2px solid #E66C51;
    width: 400px;
    height: 500px;
+   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
 }
 .login h3{
     /* font-size: 22px; */
     margin: 0px 0px 48px 0px;
 }
 .login p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     font-size: 18px;
+    color: rgb(44, 44, 44);
     margin: 1px;
     display: flex;
 }
@@ -44,4 +48,5 @@
     background-color: #9F215D    ;
     font-size: 18px;
 }
+
 

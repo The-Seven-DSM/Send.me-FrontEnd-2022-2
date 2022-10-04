@@ -23,12 +23,12 @@ function Perfil (){
                     <p>RG:999-999-99</p>
                 </div>
                 <div className="meio"> 
-                    <p>email: Lukinhas@gmial.com</p>
-                    <p>data nascimento : 12/23/2204</p>
+                    <p>Email: Lukinhas@gmial.com</p>
+                    <p>Data Nascimento: 12/23/2204</p>
                 </div>
                 <div className="direito"> 
                     <a href="/a"><img src={Lixeira} alt="Lixeira" /></a>
-                    <a href="/a"><img src={Caneta} alt="Caneta" /><p>Editar</p> </a>
+                    <a href="/a"><img src={Caneta} alt="Caneta" /></a>
                 </div>
 
                 </div>
