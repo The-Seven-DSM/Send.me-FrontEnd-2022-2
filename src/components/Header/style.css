@@ -17,8 +17,7 @@
     display: flex;
   }
   .nav-list li {
-    letter-spacing: 1px;
-    margin-left: 32px;
+    margin-left: 16px;
   }
   
   a {
@@ -37,8 +36,5 @@
     .logo {
       font-size: 20px;
       letter-spacing: 1px;
-    }
-    .nav-list li {
-      letter-spacing: 0;
     }
   }

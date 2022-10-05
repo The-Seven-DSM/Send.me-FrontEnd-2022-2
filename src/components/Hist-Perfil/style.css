@@ -14,6 +14,7 @@
     flex-direction: column;
 }
 .direito{
+    gap: 100px;
     margin-right: 20px;
 }
 .direito a p{
@@ -35,7 +36,7 @@
 p{
     font-family: 'Poppins', sans-serif;
 }
-/* @media(max-width:768px){
+@media(max-width:600px){
     .containerPerfil{
         height: 400px;
         flex-direction: column;
@@ -46,7 +47,6 @@ p{
         margin-right: 0;
     }
     .direito {
-        width: 100px;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -56,4 +56,4 @@ p{
     .meio p{
         padding: 10px 0;
     }
-} */
+}

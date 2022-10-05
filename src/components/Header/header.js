@@ -7,6 +7,7 @@ function Header(){
         <a className="logo" href="/">Send.me</a>
         <ul className="nav-list">
           <li><a href="/Cadastro_Usuario">Cadastro de Usuários</a></li>
+          <li><a href="/lista">Lista de Usuários</a></li>
         </ul>
       </nav>
       // <C.Nav>
