@@ -51,6 +51,7 @@
     border-radius: 5px;
     border: 2px solid #f39d1c;
     font-size: 14px;
+    font-family: 'Inter', sans-serif;
   }
   option[value=''][disabled] {
     display: none;
@@ -125,6 +126,7 @@
     border: 1px solid #f39d1c;
     font-size: 14px;
     margin-left: 8px;
+    font-family: 'Inter', sans-serif;
   }
   
   option[value=''][disabled] {

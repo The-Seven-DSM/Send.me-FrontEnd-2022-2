@@ -5,9 +5,10 @@ import Naoverificado from "../../assets/img/nao-verificado.png"
 export default function Card(props) {
     const aa = props.id
     const bb = props.nome
+    const cc = props.fk
     const Link = () => {
         // eslint-disable-next-line no-restricted-globals
-        location.href = '/editor?id='+aa+'&nome='+bb.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        location.href = '/editor?id='+aa+'&nome='+bb.normalize('NFD').replace(/[\u0300-\u036f]/g, "") +'&fk='+cc
       }
     
     return <tr onClick =  { Link }>

@@ -45,6 +45,18 @@ const Cadastro_Usuario = () => {
                                 <input onChange={pega} type="email" name="email" placeholder="Digite seu Email" required />
                             </div>
                             <div className="input-box">
+                                <span>CPF</span>
+                                <input type="number" name="CPF" placeholder="Ex: 000000000-00" required />
+                            </div>
+                            <div className="input-box">
+                                <span>RG</span>
+                                <input type="number" name="RG" placeholder="Ex: 0000000-0" required/>
+                            </div>
+                            <div className="input-box">
+                                <span>Data de Nascimento</span>
+                                <input type="date" className="input-nascimento" name="nascimento" required/>
+                            </div>
+                            <div className="input-box">
                                 <span>Gênero</span>
                                 <select name="genero" onChange={pega} placeholder="Digite seu Nome Completo" required>
                                     <option value="" disabled selected>Selecione:</option>
@@ -52,7 +64,6 @@ const Cadastro_Usuario = () => {
                                     <option value="Feminino">Feminino</option>
                                 </select>
                             </div>
-                            
                         </div>
                         
                                 <div className="button-registration">

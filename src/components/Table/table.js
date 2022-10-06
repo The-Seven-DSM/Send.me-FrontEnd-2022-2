@@ -66,6 +66,7 @@ const Table = () => {
                                     listCard={listGames}
                                     setListCard={setListGames}
                                     id={value.id_email}
+                                    fk={value.fk_id_associado}
                                     nome={value.associado.nome}
                                     email={value.associado.email}
                                     pagina={value.pagina.split('/')[8]}

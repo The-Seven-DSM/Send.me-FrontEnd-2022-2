@@ -14,21 +14,24 @@ const Editor = () => {
 
         }))
     }
-    const [usea,setUser] = useState([])
+    const [User,setUser] = useState([])
     const [Email, setEmail] = useState([]);
     const [pa,setPa] = useState([]);
     const [texto, setTexto] = useState('')
     const [pagina, setPagina] = useState(0);
     const [paginaSrc, setPaginaSrc] = useState('')
-
-    var fk = "/get/associate/" + Email.fk_id_associado
+    
+    
+    var fk = "/get/associate/" + window.location.href.split('=')[3]
     var ida = "/get/email/" + window.location.href.split('=')[1].split('&nome')[0]
-    let use = window.location.href.split('=')[2].split('%20').join(' ')
+    let use = window.location.href.split('=')[2].split('%20').join(' ').split('&fk')
+    console.log(texto);
     
     const validar = () => {
         Axios.post(`http://localhost:3001/validar`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
+            corpo2: texto,
         }
         ).then(resp => {
             console.log(resp);
@@ -39,9 +42,10 @@ const Editor = () => {
         Axios.post(`http://localhost:3001/send/direto`, {
             id_email: Email.id_email,
             corpo: values.emailCrpo,
+            corpo2: texto,
             fk_id_associado: Email.fk_id_associado,
-            // nome: Email.associado.nome,
-            // email: Email.associado.email,
+            nome: use[0],
+            email: User.email,
             
         }
         ).then(resp => {
@@ -51,7 +55,7 @@ const Editor = () => {
     }
     useEffect(() => {
         Axios.get(`http://localhost:3001${fk}`).then((resp) => {
-        setUser(resp.data)
+            setUser(resp.data)
             
         });
     }, [])
