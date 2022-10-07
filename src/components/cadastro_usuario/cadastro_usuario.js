@@ -18,7 +18,10 @@ const Cadastro_Usuario = () => {
         Axios.post(`http://localhost:3001/create/associate`, {
             nome: values.nome,
             email: values.email,
-            genero: values.genero
+            genero: values.genero,
+            cpf: values.cpf,
+            rg: values.rg,
+            datanascimento: values.datanascimento,
         }
         ).then(resp => {
             console.log(values);
@@ -46,15 +49,15 @@ const Cadastro_Usuario = () => {
                             </div>
                             <div className="input-box">
                                 <span>CPF</span>
-                                <input type="number" name="CPF" placeholder="Ex: 000000000-00" required />
+                                <input onChange={pega} type="number" name="cpf" placeholder="Ex: 000000000-00" required />
                             </div>
                             <div className="input-box">
                                 <span>RG</span>
-                                <input type="number" name="RG" placeholder="Ex: 0000000-0" required/>
+                                <input onChange={pega} type="number" name="rg" placeholder="Ex: 00000000-0" required/>
                             </div>
                             <div className="input-box">
                                 <span>Data de Nascimento</span>
-                                <input type="date" className="input-nascimento" name="nascimento" required/>
+                                <input onChange={pega} type="date" className="input-nascimento" name="datanascimento" required/>
                             </div>
                             <div className="input-box">
                                 <span>Gênero</span>
