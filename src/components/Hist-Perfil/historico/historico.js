@@ -16,7 +16,7 @@ function Historico() {
                 :
                 "null"
             }))} */}
-            <h3 className="Titulo"> Histórico de mensões </h3>
+            <h3 className="Titulo"> Histórico</h3>
             <table>
                 <thead>
                     <tr>

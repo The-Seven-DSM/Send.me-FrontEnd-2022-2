@@ -10,12 +10,16 @@ export default function Asso(props) {
             console.log(resp);
         });
         alert("Associado foi deletado!");
-        // eslint-disable-next-line no-restricted-globals
-        location.href = '/perfil?nome=' + bb
+        
+    }
+    const perfil = () => {
+    // eslint-disable-next-line no-restricted-globals
+    location.href = '/perfil?nome=' + bb
     }
 
-    return <div onClick={Link}>
-            <h2>{props.nome}</h2>
-            <a href="/lista"><img src={Lixeira} alt="Lixeira" /></a>
-        </div>
+
+    return <div>
+    <h2 onClick={perfil}>{props.nome}</h2>
+     <img src={Lixeira} alt="Lixeira" onClick={Link}/>
+    </div>
 }
