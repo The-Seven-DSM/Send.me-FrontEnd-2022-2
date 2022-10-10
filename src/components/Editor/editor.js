@@ -5,6 +5,7 @@ import Voltar from '../../assets/img/voltar.png';
 import ArrowRight from "../../assets/img/arrow-right.png";
 import ArrowLeft from "../../assets/img/arrow-left.png";
 
+
 const Editor = () => {
     const [values, setValues] = useState([]);
     var pega = (value) => {
@@ -126,7 +127,7 @@ const Editor = () => {
             </div>
             <div className="button-edit">
                 <a href="/"><button onClick={() => validar()} className="validate-button">VALIDAR EMAIL</button></a>
-                <button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button>
+                <a href="/"><button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button></a>
             </div>
         </>
     );

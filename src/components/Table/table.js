@@ -5,11 +5,14 @@ import Header from "../Header/header";
 import month from "../utils/month";
 
 const Table = () => {
+    const data = new Date();
+    const dia = data.getDate();
+    const mes = month[data.getMonth()];
+    const ano = data.getFullYear();
     const [listGames, setListGames] = useState([]);
     // const [setAssoc] = useState([]);
     // console.log(listGames.map((item) => item.associado.nome));
     // console.log(listGames.map((item) => item.corpo));
-     
     console.log(listGames.map((item) => item.estado == true && item.envio==false? item.id_email: null));
     const sendMail = () => {
     
@@ -17,7 +20,9 @@ const Table = () => {
             id_email: listGames.map((item) => item.estado == true && item.envio==false? item.id_email: null),
             nome: listGames.map((item) => item.estado && !item.envio ? item.associado.nome: null ),
             corpo: listGames.map((item) => item.estado && !item.envio? item.corpo: null),
-            email: listGames.map((item) => item.estado && !item.envio?item.associado.email: null),
+            email: listGames.map((item) => item.estado && !item.envio? item.associado.email: null),
+            
+            // `${ano}-${mes}-${dia}`,
             
         }
         ).then(resp => {
@@ -30,10 +35,7 @@ const Table = () => {
             setListGames(resp.data);
         });
     }, [])
-    const data = new Date();
-    const dia = data.getDate();
-    const mes = month[data.getMonth()];
-    const ano = data.getFullYear();
+    
     return (
         <>
             <Header />

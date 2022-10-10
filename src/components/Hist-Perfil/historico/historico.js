@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import Card from "../../Table/card";
+import Card3 from "./card3";
 function Historico() {
     const [listGames, setListGames] = useState([]);
     var nome = window.location.href.split('=')[1]
@@ -28,7 +28,7 @@ function Historico() {
                 </thead>
                 <tbody>
                     {typeof listGames !== 'undefined' && listGames.map((value) => value.emails.map((item) => {
-                        return <Card
+                        return <Card3
                             listCard={listGames}
                             setListCard={setListGames}
                             id={item.id_email}
@@ -36,6 +36,7 @@ function Historico() {
                             email={value.email}
                             pagina={item.pagina.split('/')[8]}
                             estado={item.estado}
+                            envio={item.envio}
                         />
 
                     }))}
