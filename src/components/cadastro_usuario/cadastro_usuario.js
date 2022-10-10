@@ -32,11 +32,11 @@ const Cadastro_Usuario = () => {
             <Header />
             <div className="background">
                 <div className="back-button-registration">
-                    <a href="/"><img src={Voltar} alt="Voltar" /></a>
+                    <a href="/home"><img src={Voltar} alt="Voltar" /></a>
                     <h3>Cadastro de Associados</h3>
                 </div>
                 <div className="container">
-                    <form action="/">
+                    <form action="/home">
                         <div className="detail">
 
                             <div className="input-box">

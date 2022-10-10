@@ -17,7 +17,7 @@ function Lista() {
       <Header />
       <div className="background">
         <div className="back-button-registration">
-          <a href="/"><img src={Voltar} alt="Voltar" /></a>
+          <a href="/home"><img src={Voltar} alt="Voltar" /></a>
           <h3>Lista de associados</h3>
         </div>
         <div className='bloco'>

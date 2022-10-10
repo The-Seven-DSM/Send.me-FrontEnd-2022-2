@@ -29,10 +29,10 @@ const App = () => {
     
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={ dia == 0 || dia == 1 ? <SemCaderno/>:<Table/> } />
+        <Route path='/home' element={ dia == 0 || dia == 1 ? <SemCaderno/>:<Table/> } />
         <Route path='/editor' element={<Editor />} />
         <Route path='/cadastro_usuario' element={<Cadastro_Usuario />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/Lista' element={<Lista />} />
       </Routes>

@@ -86,7 +86,7 @@ const Table = () => {
                         <option value="0">Todos</option>
                         <option value="1">Verificados</option>
                     </select>
-                    <a href="/"><button className="send-email-home" onClick={() => sendMail()}>ENVIAR EMAILS</button>
+                    <a href="/home"><button className="send-email-home" onClick={() => sendMail()}>ENVIAR EMAILS</button>
                     </a>
                 </div>
             </main>

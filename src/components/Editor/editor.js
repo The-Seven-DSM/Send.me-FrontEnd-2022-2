@@ -109,7 +109,7 @@ const Editor = () => {
         <>
             <Header />
             <div className="back-button-edit" >
-                <a href="/"><img src={Voltar} alt="Voltar" /></a>
+                <a href="/home"><img src={Voltar} alt="Voltar" /></a>
                 <h3>{use}</h3>
             </div>
             <div className="edit">
@@ -126,8 +126,8 @@ const Editor = () => {
                 </textarea>
             </div>
             <div className="button-edit">
-                <a href="/"><button onClick={() => validar()} className="validate-button">VALIDAR EMAIL</button></a>
-                <a href="/"><button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button></a>
+                <a href="/home"><button onClick={() => validar()} className="validate-button">VALIDAR EMAIL</button></a>
+                <a href="/home"><button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button></a>
             </div>
         </>
     );
