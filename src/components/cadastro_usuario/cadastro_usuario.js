@@ -49,11 +49,11 @@ const Cadastro_Usuario = () => {
                             </div>
                             <div className="input-box">
                                 <span>CPF</span>
-                                <input onChange={pega} type="number" name="cpf" placeholder="Ex: 000000000-00" required />
+                                <input onChange={pega} type="text" name="cpf" maxLength={12} placeholder="Ex: 000000000-00" required />
                             </div>
                             <div className="input-box">
                                 <span>RG</span>
-                                <input onChange={pega} type="number" name="rg" placeholder="Ex: 00000000-0" required/>
+                                <input onChange={pega} type="text" name="rg" maxLength={10} placeholder="Ex: 00000000-0" required/>
                             </div>
                             <div className="input-box">
                                 <span>Data de Nascimento</span>
