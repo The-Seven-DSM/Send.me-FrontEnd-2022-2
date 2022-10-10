@@ -20,6 +20,6 @@ export default function Asso(props) {
 
     return <div>
     <h2 onClick={perfil}>{props.nome}</h2>
-     <img src={Lixeira} alt="Lixeira" onClick={Link}/>
+     <a href="/lista"><img src={Lixeira} alt="Lixeira" onClick={Link}/></a>
     </div>
 }
