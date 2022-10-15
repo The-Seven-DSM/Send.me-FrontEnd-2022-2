@@ -1,0 +1,106 @@
+.background {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 20%;
+  height: 90vh;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.back-button-registration {
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.back-button-registration a {
+  margin-right: 16px;
+  display: flex;
+}
+
+.container form .detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 0 12px 0;
+}
+form .detail .input-box {
+  margin-bottom: 15px;
+  width: 100%;
+}
+.detail .input-box input {
+  height: 35px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #9f215d;
+  font-size: 14px;
+  padding: 0px 8px;
+}
+.detail .input-box input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(44, 44, 44);
+  opacity: 0.8;
+}
+
+.detail .input-box .input-nascimento {
+  font-family: "Inter", sans-serif;
+}
+
+.detail .input-box select {
+  height: 35px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #9f215d;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  padding: 0px 8px;
+}
+option[value=""][disabled] {
+  display: none;
+}
+.detail .input-box span {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.button-registration {
+  display: flex;
+  height: 45px;
+  margin: 45px 0;
+  width: 100%;
+  justify-content: flex-end;
+}
+.button-registration input {
+  height: 100%;
+  width: 30%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: #e66c51;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .background {
+    margin: 4rem 10%;
+  }
+  .container {
+    max-width: 100%;
+  }
+  form .detail .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}

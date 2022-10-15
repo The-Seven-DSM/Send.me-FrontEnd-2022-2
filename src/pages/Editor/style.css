@@ -27,25 +27,24 @@
   border: 2px solid #9f215d;
   border-radius: 10px;
   margin-right: 130px;
-  flex-direction:column;
+  flex-direction: column;
 }
 
-.arrow-page{
-  display:flex;
+.arrow-page {
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction:row;
+  flex-direction: row;
   margin-right: 130px;
-  margin-top:30px
+  margin-top: 30px;
 }
 
-.arrow-page p{
+.arrow-page p {
   font-family: "inter", sans-serif;
   font-size: 12px;
 }
 
-
-.arrow-button{
+.arrow-button {
   height: 25px;
   width: 25px;
   background: #e66c51;
@@ -53,14 +52,13 @@
   border-radius: 5px;
   align-items: center;
   justify-content: center;
-  margin:10px
+  margin: 10px;
 }
 
 .ArrowImg {
   height: 10px;
   width: 7px;
 }
-
 
 .email-body {
   resize: none;
@@ -78,18 +76,13 @@
   width: 400px;
 }
 
-.email-body:hover {
-  cursor: pointer;
-  background-color: #eeeeee;
-}
-
 .button-edit {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 40px 20px;
   padding: 20px 20% 20px 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .validate-button {
@@ -103,11 +96,11 @@
   border: 2px solid #e66c51;
   font-size: 16px;
   margin-left: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
-.send-button{
+.send-button {
   width: 210px;
   height: 45px;
   background: #e66c51;
@@ -118,7 +111,7 @@
   outline: none;
   font-size: 16px;
   margin-left: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -132,7 +125,7 @@
 
   .pdf {
     margin-bottom: 50px;
-    margin-right: 0px
+    margin-right: 0px;
   }
 
   .edit {
@@ -142,11 +135,10 @@
 
   .email-body {
     height: 200px;
-    margin: 0 10px
+    margin: 0 10px;
   }
 
-  .back-button-edit{
+  .back-button-edit {
     margin-right: 10%;
   }
-
 }
