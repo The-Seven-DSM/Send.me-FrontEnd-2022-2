@@ -6,7 +6,7 @@ import "./global.css";
 import Editor from "./pages/Editor";
 import CreateAssociate from "./pages/CreateAssociate";
 import Login from "./pages/Login";
-import Perfil from "./components/Hist-Perfil";
+import Profile from "./pages/Profile";
 import AssociateList from "./pages/AssociateList";
 
 import Home from "./pages/Home";
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/editor" element={<Editor />} />
         <Route path="/createAssociate" element={<CreateAssociate />} />
         <Route path="/" element={<Login />} />
-        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/perfil" element={<Profile />} />
         <Route path="/list" element={<AssociateList />} />
       </Routes>
     </BrowserRouter>
