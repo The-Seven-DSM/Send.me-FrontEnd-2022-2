@@ -18,7 +18,7 @@ export default function EmailList() {
 
   return (
     <>
-      <Title>Histórico</Title>
+      <h3>Histórico</h3>
       <table>
         <thead>
           <tr>
