@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getAssociateEmails } from "../../services/requests";
 import { Card } from "../";
 
-import "./style";
+import "./style.css";
 
 export default function EmailList() {
   const [associate, setAssociate] = useState();
