@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Header } from "../../components";
+
 import Voltar from "../../assets/img/voltar.png";
 import ArrowRight from "../../assets/img/arrow-right.png";
 import ArrowLeft from "../../assets/img/arrow-left.png";
@@ -96,7 +97,13 @@ export default function Editor() {
       </div>
       <div className="edit">
         <div>
-          <iframe className="pdf" src={paginaSrc} width="100%" height="500px" />
+          <iframe
+            title="pdf"
+            className="pdf"
+            src={paginaSrc}
+            width="100%"
+            height="500px"
+          />
 
           <div className="arrow-page">
             <button className="arrow-button" onClick={() => paginaSub(pagina)}>

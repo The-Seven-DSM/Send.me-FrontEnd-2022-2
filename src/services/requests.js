@@ -5,7 +5,7 @@ export async function sendAllVerifiedEmails(associates) {
   try {
     const payload = {
       id_email: associates.map((associate) =>
-        associate.estado == true && associate.envio == false
+        associate.estado === true && associate.envio === false
           ? associate.id_email
           : null
       ),
@@ -137,5 +137,26 @@ export async function getAssociateList() {
   } catch (error) {
     console.error(error);
     alert("Falha ao listar associados");
+  }
+}
+
+// profile
+export async function getAssociateEmails(name) {
+  try {
+    const response = await api.get(`/emailsByAssociateName/${name}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    alert("Falha ao carregar dados do associado");
+  }
+}
+
+export async function deleteAssociate(id) {
+  try {
+    await api.get(`/associate/${id}`);
+    alert("Associado foi deletado!");
+  } catch (error) {
+    console.error(error);
+    alert("Falha ao deletar associado");
   }
 }

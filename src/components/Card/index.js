@@ -1,23 +1,21 @@
 import React from "react";
+
 import Verificado from "../../assets/img/verificado.png";
 import Naoverificado from "../../assets/img/nao-verificado.png";
 
-export default function Card(props) {
-  const aa = props.id;
-  const bb = props.nome;
-  const cc = props.fk;
-  const Link = () => {
+export default function Card(props, fromProfileScreen = false) {
+  function handleClick() {
     window.location.href =
       "/editor?id=" +
-      aa +
+      props.id +
       "&nome=" +
-      bb.normalize("NFD").replace(/[\u0300-\u036f]/g, "") +
+      props.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "") +
       "&fk=" +
-      cc;
-  };
+      props.fk;
+  }
 
   return (
-    <tr onClick={Link}>
+    <tr onClick={handleClick}>
       <td>{props.nome}</td>
       <td>{props.email}</td>
       <td>
@@ -27,9 +25,18 @@ export default function Card(props) {
           ? "Executivo II"
           : "Cidade"}
       </td>
-      <td>
-        {props.estado ? <img src={Verificado} /> : <img src={Naoverificado} />}
-      </td>
+
+      {fromProfileScreen ? (
+        <td>{props.envio == "1" ? "Enviado" : "Não Enviado"}</td>
+      ) : (
+        <td>
+          {props.estado ? (
+            <img src={Verificado} alt="Verificado" />
+          ) : (
+            <img src={Naoverificado} alt="Não verificado" />
+          )}
+        </td>
+      )}
     </tr>
   );
 }
