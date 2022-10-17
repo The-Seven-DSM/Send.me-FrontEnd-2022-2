@@ -18,11 +18,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<Home hasBook={day === 0 || day === 1} />} />
+        <Route
+          path="/home"
+          element={<Home hasNoBook={day === 0 || day === 1} />}
+        />
         <Route path="/editor" element={<Editor />} />
         <Route path="/createAssociate" element={<CreateAssociate />} />
         <Route path="/" element={<Login />} />
-        <Route path="/perfil" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/list" element={<AssociateList />} />
       </Routes>
     </BrowserRouter>

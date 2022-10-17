@@ -13,7 +13,7 @@ export default function Header() {
           <a href="/createAssociate">Cadastro de Usuários</a>
         </li>
         <li>
-          <a href="/lista">Lista de Usuários</a>
+          <a href="/list">Lista de Usuários</a>
         </li>
       </ul>
     </nav>

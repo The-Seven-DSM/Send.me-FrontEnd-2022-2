@@ -6,7 +6,7 @@ import { getEmails, sendAllVerifiedEmails } from "../../services/requests";
 
 import "./style.css";
 
-export default function Home(hasBook) {
+export default function Home(hasNoBook) {
   const [emails, setEmails] = useState([]);
 
   const date = new Date();
@@ -18,7 +18,7 @@ export default function Home(hasBook) {
     getEmails().then((response) => setEmails(response));
   }, []);
 
-  if (hasBook) {
+  if (!hasNoBook) {
     return (
       <>
         <Header />

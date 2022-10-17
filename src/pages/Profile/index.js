@@ -23,7 +23,7 @@ export default function Perfil() {
 
       <div className="background">
         <div className="back-button-registration">
-          <a href="/lista">
+          <a href="/list">
             <img src={Voltar} alt="Voltar" />
           </a>
           <h3>Perfil</h3>

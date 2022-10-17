@@ -1,25 +1,22 @@
 import React from "react";
 import Lixeira from "../../assets/img/lixeira.png";
 import Axios from "axios";
+import { deleteAssociate } from "../../services/requests";
 
 export default function Asso(props) {
-  const bb = props.nome;
-  const id = props.id;
-  const Link = () => {
-    Axios.post(`http://localhost:3001/delete/${id}`).then((resp) => {
-      console.log(resp);
-    });
-    alert("Associado foi deletado!");
-  };
-  const perfil = () => {
-    window.location.href = "/perfil?nome=" + bb;
+  const profileLink = () => {
+    window.location.href = "/profile?nome=" + props.nome;
   };
 
   return (
     <div>
-      <h2 onClick={perfil}>{props.nome}</h2>
-      <a href="/lista">
-        <img src={Lixeira} alt="Lixeira" onClick={Link} />
+      <h2 onClick={profileLink}>{props.nome}</h2>
+      <a href="/list">
+        <img
+          src={Lixeira}
+          alt="Lixeira"
+          onClick={() => deleteAssociate(props.id)}
+        />
       </a>
     </div>
   );
