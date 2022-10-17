@@ -1,6 +1,6 @@
 import React from "react";
 import Lixeira from "../../assets/img/lixeira.png";
-import Axios from "axios";
+
 import { deleteAssociate } from "../../services/requests";
 
 export default function Asso(props) {

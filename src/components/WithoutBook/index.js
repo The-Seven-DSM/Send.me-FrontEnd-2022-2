@@ -1,6 +1,7 @@
 import React from "react";
 
 import ErrorImg from "../../assets/img/ilustration-error.png";
+import "./style.css";
 
 export default function WithoutBook() {
   return (
