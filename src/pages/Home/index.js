@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import { Card, Header, WithoutBook } from "../../components";
 import months from "../../utils/months";
-import { getAssociates, sendAllVerifiedEmails } from "../../services/requests";
+import { getEmails, sendAllVerifiedEmails } from "../../services/requests";
 
 import "./style.css";
 
 export default function Home(hasBook) {
-  const [associates, setAssociates] = useState([]);
+  const [emails, setEmails] = useState([]);
 
   const date = new Date();
   const day = date.getDate();
@@ -15,7 +15,7 @@ export default function Home(hasBook) {
   const year = date.getFullYear();
 
   useEffect(() => {
-    getAssociates().then((response) => setAssociates(response));
+    getEmails().then((response) => setEmails(response));
   }, []);
 
   if (hasBook) {
@@ -48,19 +48,21 @@ export default function Home(hasBook) {
                 </tr>
               </thead>
               <tbody>
-                {typeof associates !== "undefined" &&
-                  associates.map((value, index) => {
-                    return !value.envio ? (
-                      <Card
-                        key={index}
-                        id={value.id_email}
-                        fk={value.fk_id_associado}
-                        nome={value.associado.nome}
-                        email={value.associado.email}
-                        pagina={value.pagina.split("/")[8]}
-                        estado={value.estado}
-                      />
-                    ) : null;
+                {emails &&
+                  emails.map((value, index) => {
+                    return (
+                      !value.envio && (
+                        <Card
+                          key={index}
+                          id={value.id_email}
+                          fk={value.fk_id_associado}
+                          nome={value.associado.nome}
+                          email={value.associado.email}
+                          pagina={value.pagina.split("/")[8]}
+                          estado={value.estado}
+                        />
+                      )
+                    );
                   })}
               </tbody>
             </table>
@@ -77,7 +79,7 @@ export default function Home(hasBook) {
             <a href="/home">
               <button
                 className="send-email-home"
-                onClick={() => sendAllVerifiedEmails(associates)}
+                onClick={() => sendAllVerifiedEmails(emails)}
               >
                 ENVIAR EMAILS
               </button>

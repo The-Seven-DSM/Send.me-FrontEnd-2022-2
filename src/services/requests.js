@@ -20,7 +20,7 @@ export async function sendAllVerifiedEmails(associates) {
       ),
     };
 
-    await api.post(`/send`, payload);
+    await api.post(`/sendEmails`, payload);
     alert("Todos os emails verificados foram enviados");
   } catch (error) {
     console.error(error);
@@ -28,9 +28,9 @@ export async function sendAllVerifiedEmails(associates) {
   }
 }
 
-export async function getAssociates() {
+export async function getEmails() {
   try {
-    const response = await api.get(`/get/emails`);
+    const response = await api.get(`/emails`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -49,7 +49,7 @@ export async function createAssociate(associateData) {
       rg: associateData.rg,
       datanascimento: associateData.datanascimento,
     };
-    await api.post(`/create/associate`, payload);
+    await api.post(`/associate`, payload);
     alert("Associado cadastrado com sucesso!");
   } catch (error) {
     console.error(error);
@@ -82,7 +82,7 @@ export async function validateEmail(id, corpo, corpo2) {
       corpo2: corpo2,
     };
 
-    await api.post(`/valida`, payload);
+    await api.post(`/validateEmail`, payload);
     alert("O email foi validado!");
   } catch (error) {
     console.error(error);
@@ -101,7 +101,7 @@ export async function sendEmail(id, corpo, corpo2, fk, nome, email) {
       email,
     };
 
-    await api.post(`/send/direto`, payload);
+    await api.post(`/sendEmail`, payload);
     alert("O email foi em enviado!");
   } catch (error) {
     console.error(error);
@@ -111,7 +111,7 @@ export async function sendEmail(id, corpo, corpo2, fk, nome, email) {
 
 export async function getAssociate(fk) {
   try {
-    const response = await api.get(`/get/associate/${fk}`);
+    const response = await api.get(`/associate/${fk}`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -121,7 +121,7 @@ export async function getAssociate(fk) {
 
 export async function getAssociateEmail(name) {
   try {
-    const response = await api.get(`/get/email/${name}`);
+    const response = await api.get(`/emailsByAssociateName/${name}`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -132,7 +132,7 @@ export async function getAssociateEmail(name) {
 // associate list
 export async function getAssociateList() {
   try {
-    const response = await api.get(`/get/associates`);
+    const response = await api.get(`/associates`);
     return response.data;
   } catch (error) {
     console.error(error);
