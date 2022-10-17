@@ -27,7 +27,7 @@ export default function Card(props, fromProfileScreen = false) {
       </td>
 
       {fromProfileScreen ? (
-        <td>{props.envio == "1" ? "Enviado" : "Não Enviado"}</td>
+        <td>{props.envio === "1" ? "Enviado" : "Não Enviado"}</td>
       ) : (
         <td>
           {props.estado ? (
