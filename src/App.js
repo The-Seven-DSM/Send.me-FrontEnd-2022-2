@@ -11,6 +11,7 @@ import '../src/components/login/style.css'
 import '../src/components/Hist-Perfil/style.css'
 import '../src/components/Hist-Perfil/historico/style.css'
 import '../src/components/Lista-assoc/style.css'
+import '../src/components/cadastro_backoffice/style.css'
 
 import Table from './components/Table/table';
 import Editor from './components/Editor/editor';
@@ -19,6 +20,7 @@ import SemCaderno from './components/Sem-Caderno/sem_caderno';
 import Login from './components/login/login';
 import Perfil from './components/Hist-Perfil/perfil';
 import Lista from './components/Lista-assoc/lista';
+import Cadastro_Backoffice from './components/cadastro_backoffice/cadastro_backoffice';
 
 
 const d = new Date(); 
@@ -35,6 +37,7 @@ const App = () => {
         <Route path='/' element={<Login />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/Lista' element={<Lista />} />
+        <Route path='/cadastro_backoffice' element={<Cadastro_Backoffice />} />
       </Routes>
     </BrowserRouter>
   )
