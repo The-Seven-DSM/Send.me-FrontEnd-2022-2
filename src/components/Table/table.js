@@ -13,6 +13,14 @@ const Table = () => {
     // const [setAssoc] = useState([]);
     // console.log(listGames.map((item) => item.associado.nome));
     // console.log(listGames.map((item) => item.corpo));
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "/";
+        alert("Você não está logado");
+        }
+    function sair() {
+        localStorage.removeItem("token");
+        window.location.href = "/";
+    }
     console.log(listGames.map((item) => item.estado == true && item.envio==false? item.id_email: null));
     const sendMail = () => {
     
@@ -40,6 +48,7 @@ const Table = () => {
         <>
             <Header />
             <main>
+                <button onClick={() => sair()}>sair</button>
                 <h1 className="title-table"> Diário Oficial - Dia {dia} de {mes} de {ano} </h1>
                 <div className="search">
                     <input type="text" placeholder="Nome" />

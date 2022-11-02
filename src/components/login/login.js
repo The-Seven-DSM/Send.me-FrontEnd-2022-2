@@ -32,6 +32,8 @@ const Login = () => {
                 }
                 else {
                     window.location.href = "/home"
+                    let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2);
+                    localStorage.setItem("token", token);
                 }
             });
         }
