@@ -13,9 +13,7 @@ const Table = () => {
     // const [setAssoc] = useState([]);
     // console.log(listGames.map((item) => item.associado.nome));
     // console.log(listGames.map((item) => item.corpo));
-    if (localStorage.getItem("token") == null) {
-        window.location.href = "/";
-        }
+
     function sair() {
         localStorage.removeItem("token");
         window.location.href = "/";

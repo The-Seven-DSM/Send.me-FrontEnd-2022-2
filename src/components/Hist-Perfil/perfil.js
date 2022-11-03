@@ -7,9 +7,7 @@ import Historico from "./historico/historico";
 import Axios from "axios";
 
 function Perfil() {
-    if (localStorage.getItem("token") == null) {
-        window.location.href = "/";
-        }
+
     const [listGames, setListGames] = useState([]);
     var nome = window.location.href.split('=')[1]
     console.log(listGames.map((value) => value.id_associado));
