@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Card3 from "./card3";
 function Historico() {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "/";
+        }
     const [listGames, setListGames] = useState([]);
     var nome = window.location.href.split('=')[1]
     useEffect(() => {

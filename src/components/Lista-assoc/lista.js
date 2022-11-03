@@ -6,6 +6,9 @@ import Voltar from '../../assets/img/voltar.png'
 import Asso from "./Asso";
 
 function Lista() {
+  if (localStorage.getItem("token") == null) {
+    window.location.href = "/";
+    }
   const [listGames, setListGames] = useState([]);
   useEffect(() => {
     Axios.get(`http://localhost:3001/get/associates`).then((resp) => {

@@ -15,7 +15,6 @@ const Table = () => {
     // console.log(listGames.map((item) => item.corpo));
     if (localStorage.getItem("token") == null) {
         window.location.href = "/";
-        alert("Você não está logado");
         }
     function sair() {
         localStorage.removeItem("token");

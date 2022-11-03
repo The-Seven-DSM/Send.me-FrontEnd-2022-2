@@ -5,6 +5,9 @@ import Axios from "axios";
 import React, { useState } from "react";
 
 const Cadastro_Usuario = () => {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "/";
+        }
     const [values, setValues] = useState([]);
     const pega = (value) => {
         setValues(preValue => ({

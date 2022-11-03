@@ -7,6 +7,9 @@ import ArrowLeft from "../../assets/img/arrow-left.png";
 
 
 const Editor = () => {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "/";
+        }
     const [values, setValues] = useState([]);
     var pega = (value) => {
         setValues(preValue => ({
