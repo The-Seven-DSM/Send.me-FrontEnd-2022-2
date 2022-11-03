@@ -47,7 +47,7 @@ const Table = () => {
         <>
             <Header />
             <main>
-                <button onClick={() => sair()}>sair</button>
+                
                 <h1 className="title-table"> Diário Oficial - Dia {dia} de {mes} de {ano} </h1>
                 <div className="search">
                     <input type="text" placeholder="Nome" />

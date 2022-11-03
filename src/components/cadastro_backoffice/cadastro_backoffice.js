@@ -3,9 +3,9 @@ import Header from '../Header/header'
 import Voltar from '../../assets/img/voltar.png'
 
 const Cadastro_Backoffice = () => {
-    if (localStorage.getItem("token") == null) {
-        window.location.href = "/";
-        }
+    // if (localStorage.getItem("token") == null) {
+    //     window.location.href = "/";
+    //     }
     return (
         <>
             <Header />

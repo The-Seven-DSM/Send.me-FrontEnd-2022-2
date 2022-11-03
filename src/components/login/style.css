@@ -27,7 +27,9 @@
     margin: 1px;
     display: flex;
 }
-
+.login a{
+    color: #9F215D;
+}
 .login input{
     padding: 3px;
     margin-bottom: 20px;
