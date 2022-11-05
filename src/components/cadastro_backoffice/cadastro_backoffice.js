@@ -82,7 +82,7 @@ const Cadastro_Backoffice = () => {
                     </div>
                     <div>
                         <p>Senha</p>
-                        <input onChange={pega} name="nome" placeholder="Digite a Senha" required />
+                        <input onChange={pega} name="senha" placeholder="Digite a Senha" required />
                     </div>
 
                     <div>
