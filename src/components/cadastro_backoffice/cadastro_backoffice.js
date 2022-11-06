@@ -23,11 +23,12 @@ const Cadastro_Backoffice = () => {
             cpf: values.cpf,
             datanascimento: values.datanascimento,
             telefone: values.telefone,
-            escola: values.escolavinculado,
         }
         ).then(resp => {
             // console.log(values);
         });
+        
+        
     }
     return (
         <>
@@ -68,7 +69,7 @@ const Cadastro_Backoffice = () => {
                     </form>
 
                 </div> */}
-
+                <form action='/'>
                 <div className="cadastro">
                     <h3>Cadastro</h3>
 
@@ -97,15 +98,12 @@ const Cadastro_Backoffice = () => {
                         <p>Telefone</p>
                         <input onChange={pega} type='number' name="telefone" maxLength={12} placeholder="Ex: 12 00000-0000" required />
                     </div>
-                    <div>
-                        <p>Escola Vinculada</p>
-                        <input onChange={pega} type='text' name="escolavinculado" maxLength={120} placeholder="Digite o nome da escola em que está vinculado" required />
-                    </div>
+                    
                     <button onClick={() => manda()}>Cadastrar</button>
-                    <p><a href="/">Voltar</a></p>
+                <p><a href="/">Voltar</a></p>
 
                 </div>
-
+                </form>
             </main>
 
         </>

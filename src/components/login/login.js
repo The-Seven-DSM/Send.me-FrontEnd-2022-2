@@ -56,7 +56,7 @@ const Login = () => {
                     <input onChange={pega} type="password" name="senha" id="senha" />
                 </div>
                 <button onClick={() => auth()}>Entrar</button>
-                <p>Não possui conta?<a href="/cadastro_backoffice">Cadastre-se aqui!</a></p>
+                <p>Não possui conta?<a href="/cadastro_backoffice"> Cadastre-se aqui!</a></p>
 
             </div>
 

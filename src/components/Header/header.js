@@ -23,7 +23,7 @@ class Header extends Component {
         <ul id="nav-list" className={this.state.clicked ? "#nav-list active" : "#nav-list"}>
           <div className='top'>
             <li><a href="/Cadastro_Usuario">Cadastro de Usuários</a></li>
-            <li><a href="/Cadastro_BackOffice">Cadastro de BackOffice</a></li>
+            {/* <li><a href="/Cadastro_BackOffice">Cadastro de BackOffice</a></li> */}
             <li><a href="/lista">Lista de Usuários</a></li>
           </div>
           <div className='bottom'>

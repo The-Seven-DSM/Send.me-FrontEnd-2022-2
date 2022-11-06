@@ -23,6 +23,7 @@ const Cadastro_Usuario = () => {
             cpf: values.cpf,
             rg: values.rg,
             datanascimento: values.datanascimento,
+            escola: values.escolavinculado,
         }
         ).then(resp => {
             console.log(values);
@@ -46,7 +47,7 @@ const Cadastro_Usuario = () => {
                             </div>
                             <div className="input-box">
                                 <span>Email</span>
-                                <input onChange={pega} type="email" name="email" placeholder="Digite seu Email" required />
+                                <input onChange={pega} type="text" name="email" placeholder="Digite seu Email" required />
                             </div>
                             <div className="input-box">
                                 <span>CPF</span>
@@ -59,6 +60,10 @@ const Cadastro_Usuario = () => {
                             <div className="input-box">
                                 <span>Data de Nascimento</span>
                                 <input onChange={pega} type="date" className="input-nascimento" name="datanascimento" required/>
+                            </div>
+                            <div className="input-box">
+                                <span>Escola Vinculada</span>
+                                <input onChange={pega} type='text' name="escolavinculado" maxLength={120} placeholder="Digite o nome da escola em que está vinculado" required />
                             </div>
                             <div className="input-box">
                                 <span>Gênero</span>

@@ -4,7 +4,8 @@ import Header from "../Header/header";
 import Voltar from '../../assets/img/voltar.png';
 import ArrowRight from "../../assets/img/arrow-right.png";
 import ArrowLeft from "../../assets/img/arrow-left.png";
-
+import DownloadButton from "../../assets/img/download-pdf.png";
+import month from "../utils/month";
 
 const Editor = () => {
 
@@ -19,15 +20,20 @@ const Editor = () => {
     const [User,setUser] = useState([])
     const [Email, setEmail] = useState([]);
     const [pa,setPa] = useState([]);
-    const [texto, setTexto] = useState('')
+    var [texto, setTexto] = useState('')
     const [pagina, setPagina] = useState(0);
     const [paginaSrc, setPaginaSrc] = useState('')
     
+
+    const data = new Date();
+    const dia = data.getDate();
+    const mes = month[data.getMonth()];
+    const ano = data.getFullYear();
+
     
     var fk = "/get/associate/" + window.location.href.split('=')[3]
     var ida = "/get/email/" + window.location.href.split('=')[1].split('&nome')[0]
     let use = window.location.href.split('=')[2].split('%20').join(' ').split('&fk')
-    console.log(texto);
     
     const validar = () => {
         Axios.post(`http://localhost:3001/validar`, {
@@ -40,6 +46,7 @@ const Editor = () => {
         });
         alert("O email foi validado!");
     }
+    
     const sendMail = () => {
         Axios.post(`http://localhost:3001/send/direto`, {
             id_email: Email.id_email,
@@ -105,10 +112,34 @@ const Editor = () => {
         setPagina(Number(numero))
     }
 
-
+    function gerarpdf() {
+        const { jsPDF } = require("jspdf");
+        const doc = new jsPDF({
+            unit: "in",
+            format: [16, 12]
+          });
+        var novotexto=""
+        
+        // if (typeof(values.emailCrpo) == undefined){
+        //     texto = texto
+        // }else  {
+        //     texto = values.emailCrpo
+        // }
+        for (let i = 0; i < texto.length; i++) {
+            if (i % 50 == 0 && i != 0){
+              novotexto += texto[i] + "\n";
+            } else {
+              novotexto += texto[i];
+            }
+          }
+          doc.text(`Registro retirado do Diário Oficial - Cidade\nDia ${dia} de ${mes} de ${ano}\n${use} \n \n${novotexto}`, 1, 1);
+          doc.save("Registo do Diário Oficial - SendMe.pdf");
+        }
+        // 
     return (
         <>
             <Header />
+            
             <div className="back-button-edit" >
                 <a href="/home"><img src={Voltar} alt="Voltar" /></a>
                 <h3>{use}</h3>
@@ -129,8 +160,12 @@ const Editor = () => {
             <div className="button-edit">
                 <a href="/home"><button onClick={() => validar()} className="validate-button">VALIDAR EMAIL</button></a>
                 <a href="/home"><button onClick={() => sendMail()} className="send-button">ENVIAR EMAIL</button></a>
+                <button onClick={() =>gerarpdf()} className="create-pdf">GERAR PDF<img className="Download" src={DownloadButton} alt="Botão Download"/></button>
             </div>
         </>
     );
 }
+
+
+
 export default Editor
