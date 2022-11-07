@@ -1,28 +1,42 @@
 .salve{
-  height: 600px;
+  height: 90vh;
   display: flex;
   align-items: center; /*alinhar vertical*/
   justify-content: center; /*alinhar em horizontal*/
-
+}
+.formulario{
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: column; 
+  border-radius: 5px;
+  width: 700px;
+  height: 600px;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
 }
 .cadastro{
- display: flex;
- align-items: center; /*alinhar vertical*/
- justify-content: center; /*alinhar em horizontal*/
- flex-direction: column; /*quebrar coluna ou linha*/
- border-radius: 5px;
- width: 400px;
- height: 700px;
- box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  padding: 50px 0;
+}
+.cadastro .left > div{
+  margin: 12px 20px;
+}
+.cadastro .right > div{
+  margin: 12px 20px;
 }
 .cadastro h3{
-  /* font-size: 22px; */
   margin: 0px 0px 24px 0px;
 }
-.cadastro p{
+.formulario .button{
+  display: flex;
+}
+.formulario .button span a{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
+  border-radius: 5px;
+  padding: 12px 60px;
   color: rgb(44, 44, 44);
   margin: 1px;
   display: flex;
@@ -32,15 +46,13 @@
 }
 .cadastro input{
   padding: 3px;
-  margin-bottom: 20px;
   border-radius: 5px;
   border: solid 2px #9F215D;
   height: 28px;
   width: 250px;
 }
 
-.cadastro button{
-  margin: 20px 0px;
+.formulario button{
   width: 180px;
   height: 50px;
   color: #fff;
@@ -50,5 +62,17 @@
   background-color: #9F215D    ;
   font-size: 18px;
 }
-
-
+@media(max-width:768px){
+  .formulario{
+    width: 500px;
+    height: 700px;
+    border-radius: 5px;
+  }
+  .cadastro{
+    grid-template-columns: 1fr;
+    padding: 6px 0;
+  }
+  .formulario .button{
+    flex-direction: column;
+  }
+}

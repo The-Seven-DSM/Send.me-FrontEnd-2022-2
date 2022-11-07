@@ -42,7 +42,7 @@ const Login = () => {
 
 
     return (
-        <main className='salve'>
+        <div className='salve'>
 
             <div className="login">
                 <h3>Login</h3>
@@ -60,7 +60,7 @@ const Login = () => {
 
             </div>
 
-        </main>
+        </div>
     )
 };
 
