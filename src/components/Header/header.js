@@ -9,9 +9,9 @@ class Header extends Component {
 
   render() {
 
-    // if (localStorage.getItem("token") == null) {
-    //   window.location.href = "/";
-    // }
+    if (localStorage.getItem("token") == null) {
+      window.location.href = "/";
+    }
     function sair() {
       localStorage.removeItem("token");
       window.location.href = "/";
