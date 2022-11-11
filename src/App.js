@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
         <Route
           path="/home"
-          element={<Home hasNoBook={day === 0 || day === 1} />}
+          element={<Home hasNoBook={day === 7 || day === 1} />}
         />
         <Route path="/editor" element={<Editor />} />
         <Route path="/createAssociate" element={<CreateAssociate />} />

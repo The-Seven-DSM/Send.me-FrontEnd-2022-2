@@ -25,18 +25,26 @@ export default function Card(props, fromProfileScreen = false) {
           ? "Executivo II"
           : "Cidade"}
       </td>
-
-      {fromProfileScreen ? (
-        <td>{props.envio === "1" ? "Enviado" : "Não Enviado"}</td>
-      ) : (
-        <td>
+      
+      <td>
           {props.estado ? (
             <img src={Verificado} alt="Verificado" />
           ) : (
             <img src={Naoverificado} alt="Não verificado" />
           )}
         </td>
-      )}
     </tr>
   );
 }
+
+// {fromProfileScreen ? (
+//   <td>{props.envio === "1" ? "Enviado" : "Não Enviado"}</td>
+// ) :
+//   <td>
+//     {props.estado ? (
+//       <img src={Verificado} alt="Verificado" />
+//     ) : (
+//       <img src={Naoverificado} alt="Não verificado" />
+//     )}
+//   </td>
+// }

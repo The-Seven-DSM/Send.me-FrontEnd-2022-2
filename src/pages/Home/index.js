@@ -17,8 +17,9 @@ export default function Home(hasNoBook) {
   useEffect(() => {
     getEmails().then((response) => setEmails(response));
   }, []);
-
-  if (!hasNoBook) {
+// !hasNoBook False 
+  if (hasNoBook){
+    console.log(emails.map( email => email.pagina.split("/")[8]));
     return (
       <>
         <Header />

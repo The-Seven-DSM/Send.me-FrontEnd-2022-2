@@ -49,7 +49,7 @@ export async function createAssociate(associateData) {
       rg: associateData.rg,
       datanascimento: associateData.datanascimento,
     };
-    await api.post(`/associate`, payload);
+    await api.post(`/associate`, payload);  
     alert("Associado cadastrado com sucesso!");
   } catch (error) {
     console.error(error);
@@ -74,12 +74,12 @@ export async function login(values) {
 }
 
 // editor
-export async function validateEmail(id, corpo, corpo2) {
+export async function validateEmail(id_Email, texto, values) {
   try {
     const payload = {
-      id_email: id,
-      corpo: corpo,
-      corpo2: corpo2,
+      Email_id: id_Email,
+      texto: texto,
+      values: values,
     };
 
     await api.post(`/validateEmail`, payload);
@@ -111,6 +111,7 @@ export async function sendEmail(id, corpo, corpo2, fk, nome, email) {
 
 export async function getAssociate(fk) {
   try {
+    
     const response = await api.get(`/associate/${fk}`);
     return response.data;
   } catch (error) {
@@ -119,10 +120,15 @@ export async function getAssociate(fk) {
   }
 }
 
-export async function getAssociateEmail(name) {
+export async function getAssociateEmail(id_Email) {
   try {
-    const response = await api.get(`/emailsByAssociateName/${name}`);
-    return response.data;
+    const response = await api.get(`/emailsByAssociateID/${id_Email}`);
+    // console.log(response.data[0].emails[0].pagina);
+    let corpo = response.data[0].corpo
+    let pagina = response.data[0].pagina
+    let id_email = response.data[0].id_email
+    console.log(corpo, pagina, id_email);
+    return {corpo, pagina, id_email};
   } catch (error) {
     console.error(error);
     alert("Falha ao carregar dados do relatório");
@@ -141,9 +147,9 @@ export async function getAssociateList() {
 }
 
 // profile
-export async function getAssociateEmails(name) {
+export async function getAssociateEmails(nome) {
   try {
-    const response = await api.get(`/emailsByAssociateName/${name}`);
+    const response = await api.get(`/emailsByAssociateName/${nome}`);
     return response.data;
   } catch (error) {
     console.error(error);

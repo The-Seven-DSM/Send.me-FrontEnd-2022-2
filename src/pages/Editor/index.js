@@ -16,13 +16,12 @@ import {
 import "./style.css";
 
 export default function Editor() {
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState('');
   const [User, setUser] = useState([]);
-  const [Email, setEmail] = useState([]);
+  // const [Email_id, setEmail] = useState([]);
   const [texto, setTexto] = useState("");
   const [pagina, setPagina] = useState(0);
   const [paginaSrc, setPaginaSrc] = useState("");
-
   function handleChange(value) {
     setValues((preValue) => ({
       ...preValue,
@@ -30,25 +29,25 @@ export default function Editor() {
     }));
   }
 
-  let use = window.location.href
-    .split("=")[2]
-    .split("%20")
-    .join(" ")
-    .split("&fk");
-
+  let id_Email = window.location.href
+    .split("=")[1]
+    .split('&nome')[0]
   useEffect(() => {
-    getAssociate(window.location.href.split("=")[3]).then((resp) => {
-      setUser(resp.data);
+    getAssociate(window.location.href.split("=")[3]).then((response) => {
+      setUser(response);
     });
-
     getAssociateEmail(
-      window.location.href.split("=")[1].split("&nome")[0]
+    window.location.href
+    .split("=")[1]
+    .split('&nome')[0]
     ).then((response) => {
-      setEmail(response);
-      setPaginaSrc(response.pagina);
-      var paginaEx = response.pagina;
-      setPagina(paginaEx.split("_")[1].split(".")[0]);
-      setTexto(response.corpo.toString());
+      setPagina(response.pagina);
+      // setEmail(response.id_email);
+      // setPaginaSrc( response.pagina);
+      // setPaginaSrc(response.data[0].emails[0].pagina);
+      // var paginaEx = response.pagina;
+      // setPagina(response.data[0].emails[0].pagina.split("_")[1].split(".")[0]);
+      setTexto(response.corpo);
     });
   }, []);
 
@@ -93,14 +92,14 @@ export default function Editor() {
         <a href="/home">
           <img src={Voltar} alt="Voltar" />
         </a>
-        <h3>{use}</h3>
+        <h3>{User.nome}</h3>
       </div>
       <div className="edit">
         <div>
           <iframe
             title="pdf"
             className="pdf"
-            src={paginaSrc}
+            src={pagina}
             width="100%"
             height="500px"
           />
@@ -109,7 +108,7 @@ export default function Editor() {
             <button className="arrow-button" onClick={() => paginaSub(pagina)}>
               <img className="ArrowImg" src={ArrowLeft} alt="Seta Direita" />
             </button>
-            <p> Página:{pagina}</p>
+            <p> Página:{paginaSrc}</p>
             <button className="arrow-button" onClick={() => paginaSom(pagina)}>
               <img className="ArrowImg" src={ArrowRight} alt="Seta Esquerda" />
             </button>
@@ -129,7 +128,7 @@ export default function Editor() {
         <a href="/home">
           <button
             onClick={() =>
-              validateEmail(Email.id_email, values.emailCrpo, texto)
+              validateEmail(id_Email, texto, values.emailCrpo)
             }
             className="validate-button"
           >
@@ -140,11 +139,11 @@ export default function Editor() {
           <button
             onClick={() =>
               sendEmail(
-                Email.id_email,
-                values.emailCrpo,
+                id_Email,
                 texto,
-                Email.fk_id_associado,
-                use[0],
+                texto,
+                User.id_associado,
+                User.nome,
                 User.email
               )
             }
