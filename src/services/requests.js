@@ -149,7 +149,7 @@ export async function getAssociateList() {
 // profile
 export async function getAssociateEmails(nome) {
   try {
-    const response = await api.get(`/emailsByAssociateName/${nome}`);
+    const response = await api.get(`/emailsByAssociateID/${nome}`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -159,7 +159,7 @@ export async function getAssociateEmails(nome) {
 
 export async function deleteAssociate(id) {
   try {
-    await api.get(`/associate/${id}`);
+    await api.delete(`/associate/${id}`);
     alert("Associado foi deletado!");
   } catch (error) {
     console.error(error);

@@ -16,7 +16,7 @@ export default function Perfil() {
       setAssociate(response)
     );
   }, []);
-console.log(window.location.href.split("=")[1]);
+console.log(associate);
   return (
     <>
       <Header />

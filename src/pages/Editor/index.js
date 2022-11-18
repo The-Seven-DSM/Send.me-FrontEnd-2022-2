@@ -141,7 +141,7 @@ export default function Editor() {
               sendEmail(
                 id_Email,
                 texto,
-                texto,
+                values.emailCrpo,
                 User.id_associado,
                 User.nome,
                 User.email
