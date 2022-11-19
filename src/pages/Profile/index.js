@@ -22,7 +22,6 @@ export default function Perfil() {
       setEmails (response)
     );
   }, []);
-
   return (
     <>
       <Header />
@@ -55,8 +54,7 @@ export default function Perfil() {
           <div className="direito">
             <a
               href="/list"
-              onClick={() =>
-                deleteAssociate(associate.map((value) => value.id_associado))
+              onClick={() => deleteAssociate(associate.id_associado)
               }
             >
               <img src={Lixeira} alt="Lixeira" />

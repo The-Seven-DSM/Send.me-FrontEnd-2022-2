@@ -19,7 +19,7 @@ export default function Home(hasNoBook) {
   }, []);
 // !hasNoBook False 
   if (hasNoBook){
-    console.log(emails.map( email => email.pagina.split("/")[8]));
+
     return (
       <>
         <Header />

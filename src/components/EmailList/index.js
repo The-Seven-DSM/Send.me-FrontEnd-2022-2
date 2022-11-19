@@ -8,7 +8,6 @@ import "./style.css";
 export default function EmailList() {
   const [associate, setAssociate] = useState();
   const [associateEmails, setAssociateEmails] = useState([]);
-
   useEffect(() => {
     getAssociateEmails(window.location.href.split("=")[1]).then((response) => {
       setAssociate(response);
@@ -36,6 +35,7 @@ export default function EmailList() {
                   key={index}
                   id={email.id_email}
                   nome={associate.nome}
+                  fk = {associate.id_associado}
                   email={associate.email}
                   pagina={email.pagina.split("/")[8]}
                   estado={email.estado}

@@ -122,13 +122,8 @@ export async function getAssociate(fk) {
 
 export async function getAssociateEmail(id_Email) {
   try {
-    const response = await api.get(`/emailsByAssociateID/${id_Email}`);
-    // console.log(response.data[0].emails[0].pagina);
-    let corpo = response.data[0].corpo
-    let pagina = response.data[0].pagina
-    let id_email = response.data[0].id_email
-    console.log(corpo, pagina, id_email);
-    return {corpo, pagina, id_email};
+    const response = await api.get(`/email/${id_Email}`);
+    return response.data
   } catch (error) {
     console.error(error);
     alert("Falha ao carregar dados do relatório");

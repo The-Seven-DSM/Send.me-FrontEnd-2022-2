@@ -13,8 +13,6 @@ export default function Card(props ) {
       "&fk=" +
       props.fk;
   }
-  // console.log(fromHomeScreen);
-  console.log( props );
   return (
     <tr onClick={handleClick}>
       <td>{props.nome}</td>
@@ -29,7 +27,7 @@ export default function Card(props ) {
 
 
       {!props.fromHomeScreen ? (
-        <td>{props.envio === "1" ? "Enviado" : "Não Enviado"}</td>
+        <td>{props.envio === true ? "Enviado" : "Não Enviado"}</td>
       ) : (
         <td>
           {props.estado ? (
@@ -40,28 +38,6 @@ export default function Card(props ) {
         </td>)} 
     </tr>
   );
-  // return (
-    
-  //   <tr onClick={handleClick}>
-  //     <td>{props.nome}</td>
-  //     <td>{props.email}</td>
-  //     <td>
-  //       {props.pagina === "exec1"
-  //         ? "Executivo I"
-  //         : props.pagina === "exec2"
-  //         ? "Executivo II"
-  //         : "Cidade"}
-  //     </td>
-      
-  //     <td>
-  //         {props.estado ? (
-  //           <img src={Verificado} alt="Verificado" />
-  //         ) : (
-  //           <img src={Naoverificado} alt="Não verificado" />
-  //         )}
-  //       </td>
-  //   </tr>
-  // );
-  
+
 }
 

@@ -28,10 +28,10 @@ export default function Editor() {
       [value.target.name]: value.target.value,
     }));
   }
-
   let id_Email = window.location.href
     .split("=")[1]
     .split('&nome')[0]
+
   useEffect(() => {
     getAssociate(window.location.href.split("=")[3]).then((response) => {
       setUser(response);
