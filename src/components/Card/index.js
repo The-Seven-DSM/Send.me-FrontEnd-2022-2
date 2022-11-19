@@ -3,7 +3,7 @@ import React from "react";
 import Verificado from "../../assets/img/verificado.png";
 import Naoverificado from "../../assets/img/nao-verificado.png";
 
-export default function Card(props, fromProfileScreen = false) {
+export default function Card(props ) {
   function handleClick() {
     window.location.href =
       "/editor?id=" +
@@ -13,7 +13,8 @@ export default function Card(props, fromProfileScreen = false) {
       "&fk=" +
       props.fk;
   }
-
+  // console.log(fromHomeScreen);
+  console.log( props );
   return (
     <tr onClick={handleClick}>
       <td>{props.nome}</td>
@@ -25,26 +26,42 @@ export default function Card(props, fromProfileScreen = false) {
           ? "Executivo II"
           : "Cidade"}
       </td>
-      
-      <td>
+
+
+      {!props.fromHomeScreen ? (
+        <td>{props.envio === "1" ? "Enviado" : "Não Enviado"}</td>
+      ) : (
+        <td>
           {props.estado ? (
             <img src={Verificado} alt="Verificado" />
           ) : (
             <img src={Naoverificado} alt="Não verificado" />
           )}
-        </td>
+        </td>)} 
     </tr>
   );
+  // return (
+    
+  //   <tr onClick={handleClick}>
+  //     <td>{props.nome}</td>
+  //     <td>{props.email}</td>
+  //     <td>
+  //       {props.pagina === "exec1"
+  //         ? "Executivo I"
+  //         : props.pagina === "exec2"
+  //         ? "Executivo II"
+  //         : "Cidade"}
+  //     </td>
+      
+  //     <td>
+  //         {props.estado ? (
+  //           <img src={Verificado} alt="Verificado" />
+  //         ) : (
+  //           <img src={Naoverificado} alt="Não verificado" />
+  //         )}
+  //       </td>
+  //   </tr>
+  // );
+  
 }
 
-// {fromProfileScreen ? (
-//   <td>{props.envio === "1" ? "Enviado" : "Não Enviado"}</td>
-// ) :
-//   <td>
-//     {props.estado ? (
-//       <img src={Verificado} alt="Verificado" />
-//     ) : (
-//       <img src={Naoverificado} alt="Não verificado" />
-//     )}
-//   </td>
-// }

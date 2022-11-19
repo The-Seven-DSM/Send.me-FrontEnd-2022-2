@@ -34,6 +34,7 @@ export default function AssociateList() {
                   setListCard={setAssociates}
                   id={value.id_associado}
                   nome={value.nome}
+
                 />
               );
             })}

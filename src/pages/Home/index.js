@@ -61,6 +61,7 @@ export default function Home(hasNoBook) {
                           email={value.associado.email}
                           pagina={value.pagina.split("/")[8]}
                           estado={value.estado}
+                          fromHomeScreen='2'
                         />
                       )
                     );

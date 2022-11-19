@@ -6,17 +6,23 @@ import Voltar from "../../assets/img/voltar.png";
 import Lixeira from "../../assets/img/lixeira.png";
 import Caneta from "../../assets/img/caneta.png";
 
-import { getAssociateEmails, deleteAssociate } from "../../services/requests";
+import {getAssociate, getAssociateEmails, deleteAssociate } from "../../services/requests";
 
 export default function Perfil() {
   const [associate, setAssociate] = useState([]);
+  const [Emails, setEmails] = useState([]);
 
   useEffect(() => {
-    getAssociateEmails(window.location.href.split("=")[1]).then((response) =>
+    getAssociate(window.location.href.split("=")[1]).then((response) =>
       setAssociate(response)
     );
   }, []);
-console.log(associate);
+  useEffect(() => {
+    getAssociateEmails(window.location.href.split("=")[1]).then((response) =>
+      setEmails (response)
+    );
+  }, []);
+
   return (
     <>
       <Header />

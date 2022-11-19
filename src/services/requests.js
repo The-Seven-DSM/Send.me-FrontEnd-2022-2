@@ -147,9 +147,9 @@ export async function getAssociateList() {
 }
 
 // profile
-export async function getAssociateEmails(nome) {
+export async function getAssociateEmails(fk) {
   try {
-    const response = await api.get(`/emailsByAssociateID/${nome}`);
+    const response = await api.get(`/emailsByAssociateID/${fk}`);
     return response.data;
   } catch (error) {
     console.error(error);

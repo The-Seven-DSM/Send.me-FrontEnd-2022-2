@@ -5,7 +5,7 @@ import { deleteAssociate } from "../../services/requests";
 
 export default function Asso(props) {
   const profileLink = () => {
-    window.location.href = "/profile?nome=" + props.id;
+    window.location.href = "/profile?fk=" + props.id;
   };
 
   return (

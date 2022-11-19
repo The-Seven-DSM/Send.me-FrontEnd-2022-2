@@ -40,7 +40,7 @@ export default function EmailList() {
                   pagina={email.pagina.split("/")[8]}
                   estado={email.estado}
                   envio={email.envio}
-                  fromProfileScreen={true}
+                  fromProfileScreen= {true}
                 />
               );
             })}
