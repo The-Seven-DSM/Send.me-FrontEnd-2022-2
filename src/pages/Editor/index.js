@@ -18,7 +18,6 @@ import "./style.css";
 export default function Editor() {
   const [values, setValues] = useState('');
   const [User, setUser] = useState([]);
-  // const [Email_id, setEmail] = useState([]);
   const [texto, setTexto] = useState("");
   const [pagina, setPagina] = useState(0);
   const [paginaSrc, setPaginaSrc] = useState("");
@@ -42,11 +41,6 @@ export default function Editor() {
     .split('&nome')[0]
     ).then((response) => {
       setPagina(response.pagina);
-      // setEmail(response.id_email);
-      // setPaginaSrc( response.pagina);
-      // setPaginaSrc(response.data[0].emails[0].pagina);
-      // var paginaEx = response.pagina;
-      // setPagina(response.data[0].emails[0].pagina.split("_")[1].split(".")[0]);
       setTexto(response.corpo);
     });
   }, []);
