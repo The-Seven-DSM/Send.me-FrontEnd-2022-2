@@ -17,6 +17,8 @@ const Login = () => {
     if (values.email == null || values.senha == null) {
       alert("Preencha todos os campos");
     } else {
+      let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2);
+      localStorage.setItem("token", token);
       login(values);
     }
   };
@@ -35,7 +37,9 @@ const Login = () => {
           <input onChange={pega} type="password" name="senha" id="senha" />
         </div>
         <button onClick={() => auth()}>Entrar</button>
+        <p>Não possui conta?<a href="/cadastro_backoffice"> Cadastre-se aqui!</a></p>
       </div>
+      
     </main>
   );
 };

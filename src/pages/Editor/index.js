@@ -40,7 +40,8 @@ export default function Editor() {
     .split("=")[1]
     .split('&nome')[0]
     ).then((response) => {
-      setPagina(response.pagina);
+      setPaginaSrc(response.pagina);
+      setPagina(response.pagina.split('_')[1].split('.')[0].replace('0', '').replace('0', '').replace('0', ''));
       setTexto(response.corpo);
     });
   }, []);
@@ -58,6 +59,7 @@ export default function Editor() {
   }
 
   var paginaSub = (numero) => {
+    console.log(numero)
     if (numero !== 1) {
       numero = parseInt(numero) - 1;
       var link =
@@ -66,10 +68,12 @@ export default function Editor() {
         ".pdf";
       setPaginaSrc(link);
       setPagina(Number(numero));
+      
     }
   };
 
   var paginaSom = (numero) => {
+    console.log(numero)
     numero = parseInt(numero) + 1;
     var link =
       paginaSrc.substring(0, paginaSrc.lastIndexOf("_") + 1) +
@@ -77,8 +81,9 @@ export default function Editor() {
       ".pdf";
     setPaginaSrc(link);
     setPagina(Number(numero));
+    
   };
-
+console.log(pagina);
   return (
     <>
       <Header />
@@ -93,7 +98,7 @@ export default function Editor() {
           <iframe
             title="pdf"
             className="pdf"
-            src={pagina}
+            src={paginaSrc}
             width="100%"
             height="500px"
           />
@@ -102,7 +107,7 @@ export default function Editor() {
             <button className="arrow-button" onClick={() => paginaSub(pagina)}>
               <img className="ArrowImg" src={ArrowLeft} alt="Seta Direita" />
             </button>
-            <p> Página:{paginaSrc}</p>
+            <p> Página:{pagina}</p>
             <button className="arrow-button" onClick={() => paginaSom(pagina)}>
               <img className="ArrowImg" src={ArrowRight} alt="Seta Esquerda" />
             </button>

@@ -59,8 +59,6 @@ export default function Perfil() {
             >
               <img src={Lixeira} alt="Lixeira" />
             </a>
-
-            <img src={Caneta} alt="Caneta" />
           </div>
         </div>
 

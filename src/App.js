@@ -8,6 +8,7 @@ import CreateAssociate from "./pages/CreateAssociate";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import AssociateList from "./pages/AssociateList";
+import CadastroBackoffice from "./pages/CadastroBackoffice/CadastroBackoffice";
 
 import Home from "./pages/Home";
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/list" element={<AssociateList />} />
+        <Route path='/cadastro_backoffice' element={<CadastroBackoffice />} />
       </Routes>
     </BrowserRouter>
   );

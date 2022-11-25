@@ -37,6 +37,24 @@ export async function getEmails() {
     alert("Falha ao listar associados");
   }
 }
+// create Backoffice 
+export async function createBackoffice(backofficeData) {
+console.log(backofficeData);
+  try {
+    const payload = {
+    nome: backofficeData.nome,
+    email: backofficeData.email,
+    senha: backofficeData.senha,
+    cpf: backofficeData.cpf,
+    datanascimento: backofficeData.datanascimento,
+    telefone: backofficeData.telefone,
+  };
+  await api.post(`/backoffice`, payload);
+  }catch (error) {
+    console.error(error);
+    alert("Falha ao cadastrar associado");
+  }
+}
 
 // create associate
 export async function createAssociate(associateData) {
