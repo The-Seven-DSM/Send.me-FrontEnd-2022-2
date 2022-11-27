@@ -5,6 +5,7 @@ import { Header } from "../../components";
 import Voltar from "../../assets/img/voltar.png";
 import ArrowRight from "../../assets/img/arrow-right.png";
 import ArrowLeft from "../../assets/img/arrow-left.png";
+import month from "";
 
 import {
   getAssociate,
@@ -30,15 +31,18 @@ export default function Editor() {
   let id_Email = window.location.href
     .split("=")[1]
     .split('&nome')[0]
-
+  const data = new Date();
+  const dia = data.getDate();
+  const mes = month[data.getMonth()];
+  const ano = data.getFullYear();
   useEffect(() => {
     getAssociate(window.location.href.split("=")[3]).then((response) => {
       setUser(response);
     });
     getAssociateEmail(
-    window.location.href
-    .split("=")[1]
-    .split('&nome')[0]
+      window.location.href
+        .split("=")[1]
+        .split('&nome')[0]
     ).then((response) => {
       setPaginaSrc(response.pagina);
       setPagina(response.pagina.split('_')[1].split('.')[0].replace('0', '').replace('0', '').replace('0', ''));
@@ -68,7 +72,7 @@ export default function Editor() {
         ".pdf";
       setPaginaSrc(link);
       setPagina(Number(numero));
-      
+
     }
   };
 
@@ -81,9 +85,32 @@ export default function Editor() {
       ".pdf";
     setPaginaSrc(link);
     setPagina(Number(numero));
-    
+
   };
-console.log(pagina);
+  console.log(pagina);
+  function gerarpdf() {
+    const { jsPDF } = require("jspdf");
+    const doc = new jsPDF({
+      unit: "in",
+      format: [16, 12]
+    });
+    var novotexto = ""
+
+    // if (typeof(values.emailCrpo) == undefined){
+    //     texto = texto
+    // }else  {
+    //     texto = values.emailCrpo
+    // }
+    for (let i = 0; i < texto.length; i++) {
+      if (i % 50 == 0 && i != 0) {
+        novotexto += texto[i] + "\n";
+      } else {
+        novotexto += texto[i];
+      }
+    }
+    doc.text(`Registro retirado do Diário Oficial - Cidade\nDia ${dia} de ${mes} de ${ano}\n${User.nome} \n \n${novotexto}`, 1, 1);
+    doc.save("Registo do Diário Oficial - SendMe.pdf");
+  }
   return (
     <>
       <Header />
@@ -151,6 +178,7 @@ console.log(pagina);
             ENVIAR EMAIL
           </button>
         </a>
+        <button onClick={() => gerarpdf()} className="create-pdf">GERAR PDF<img className="Download" src={DownloadButton} alt="Botão Download" /></button>
       </div>
     </>
   );
