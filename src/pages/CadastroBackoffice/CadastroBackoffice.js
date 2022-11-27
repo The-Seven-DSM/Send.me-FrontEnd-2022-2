@@ -1,12 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/heading-has-content */
-import Header from '../Header/header'
-import Voltar from '../../assets/img/voltar.png'
 import "./style.css"
-import Axios from "axios";
 import React, { useState } from "react";
-
-const Cadastro_Backoffice = () => {
+import { createBackoffice } from "../../services/requests";
+export default function  CadastroBackoffice() {
     const [values, setValues] = useState([]);
     const pega = (value) => {
         setValues(preValue => ({
@@ -16,26 +13,11 @@ const Cadastro_Backoffice = () => {
 
         }))
     }
-    const manda = () => {
-        Axios.post(`http://localhost:3001/create/backoffice`, {
-            nome: values.nome,
-            email: values.email,
-            senha: values.senha,
-            cpf: values.cpf,
-            datanascimento: values.datanascimento,
-            telefone: values.telefone,
-        }
-        ).then(resp => {
-            // console.log(values);
-        });
-
-
-    }
     return (
         <>
             <div className="salve">
 
-                <form action='/' className='formulario'>
+                <form  action="/" className='formulario'>
                     <h3>Cadastro</h3>
                     <div className="cadastro">
 
@@ -70,7 +52,7 @@ const Cadastro_Backoffice = () => {
                         </div>
                     </div>
                     <div className='button'>
-                        <button onClick={() => manda()}>Cadastrar</button>
+                        <button onClick={() => createBackoffice(values)} >Cadastrar</button>
                         <span><a href="/">Voltar</a></span>
                     </div>
 
@@ -82,5 +64,3 @@ const Cadastro_Backoffice = () => {
 
     )
 }
-
-export default Cadastro_Backoffice
