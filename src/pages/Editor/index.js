@@ -98,11 +98,6 @@ export default function Editor() {
     });
     var novotexto = ""
 
-    // if (typeof(values.emailCrpo) == undefined){
-    //     texto = texto
-    // }else  {
-    //     texto = values.emailCrpo
-    // }
     for (let i = 0; i < texto.length; i++) {
       if (i % 50 == 0 && i != 0) {
         novotexto += texto[i] + "\n";
