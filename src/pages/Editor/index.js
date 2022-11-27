@@ -5,7 +5,7 @@ import { Header } from "../../components";
 import Voltar from "../../assets/img/voltar.png";
 import ArrowRight from "../../assets/img/arrow-right.png";
 import ArrowLeft from "../../assets/img/arrow-left.png";
-import month from "";
+import month from "../utils/mouth";
 
 import {
   getAssociate,
