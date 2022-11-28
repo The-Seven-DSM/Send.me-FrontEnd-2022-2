@@ -17,10 +17,10 @@ export default function Header() {
       </a>
       <ul className="nav-list">
         <li>
-          <a href="/createAssociate">Cadastro de Usuários</a>
+          <a href="/createAssociate">Cadastro de Associados</a>
         </li>
         <li>
-          <a href="/list">Lista de Usuários</a>
+          <a href="/list">Lista de Associados</a>
         </li>
         <div className='bottom'>
             <li><button className="send-email-home" onClick={() => sair()}>sair</button></li>
