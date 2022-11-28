@@ -10,8 +10,11 @@ export default function Home(hasNoBook) {
   const [emails, setEmails] = useState([]);
   const [opcao , setOpcao] = useState('');
   const [opcao2 , setOpcao2] = useState('t');
+  const [busca, setBusca] = useState('');
 
-  console.log(opcao2);
+  const nomesFiltrados = emails.filter((email) => 
+    email.associado.nome.toLowerCase().includes(busca.toLowerCase()));
+
   function handleChange2(value) {
     setOpcao2((preValue) => ({
       ...preValue,
@@ -33,8 +36,6 @@ export default function Home(hasNoBook) {
   useEffect(() => {
     getEmails().then((response) => setEmails(response));
   }, []);
-  console.log(opcao2);
-
   if (hasNoBook){
 
     return (
@@ -46,7 +47,9 @@ export default function Home(hasNoBook) {
           </h1>
           <div className="search">
             
-            <input type="text" placeholder="Nome" />
+            <input 
+            value = {busca}
+            onChange={(ev) => setBusca(ev.target.value)} type="text" placeholder="Nome" />
             
             <select  
               name = "opcao2"
@@ -82,10 +85,9 @@ export default function Home(hasNoBook) {
                   <th>Status</th>
                 </tr>
               </thead>
-              <tbody>
-            
-                {emails  &&
-                  emails.map((value, index) => {
+              <tbody>     
+                {nomesFiltrados  &&
+                  nomesFiltrados.map((value, index) => {
                     return (
                       !value.envio && opcao2.opcao2 == value.pagina.split("/")[8]? (
                         <Card
